@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python3 -c ' *)",
-      "Bash(python3 src/eval/evaluate_ppl.py --model_path models/v3/char-en-de/phase_2/shuffled/de_nllb/regular/ep1/seed_0 --tokenizer_path models/v3/char-en-de/ --json_path src/eval_dataset/dative_accusative_pairs.json --gold_key gold_text --corrupt_key corrupted --category_key category --max_length 1024)"
-    ]
-  }
-}
