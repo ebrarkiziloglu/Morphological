@@ -1,0 +1,891 @@
+Original               -> Stripped
+----------------------------------------
+Best parse: Parse(word='kitabı', lemma='kitap', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[kitap:Noun] kitab:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kitabı                 -> kitap
+Best parse: Parse(word='ağaca', lemma='ağa', pos='Adv', morphemes=['Adj', 'Ly', 'Adv'], formatted='[ağa:Adj] ağa:Adj|ca:Ly→Adv')
+Morpheme tags: ['Adj', 'Ly', 'Adv']
+Last tag: Adv
+ağaca                  -> ağaca
+Best parse: Parse(word='kanadı', lemma='kanamak', pos='Verb', morphemes=['Verb', 'Past', 'A3sg'], formatted='[kanamak:Verb] kana:Verb+dı:Past+A3sg')
+Morpheme tags: ['Verb', 'Past', 'A3sg']
+Last tag: A3sg
+kanadı                 -> kanadı
+Best parse: Parse(word='köpeğe', lemma='köpek', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[köpek:Noun] köpeğ:Noun+A3sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+köpeğe                 -> köpek
+Best parse: Parse(word='burnu', lemma='Burn', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[Burn:Noun,Prop] burn:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+burnu                  -> burn
+Best parse: Parse(word='şehre', lemma='şehir', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[şehir:Noun] şehr:Noun+A3sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+şehre                  -> şehir
+Best parse: Parse(word='kitabımı', lemma='kitap', pos='Noun', morphemes=['Noun', 'A3sg', 'P1sg', 'Acc'], formatted='[kitap:Noun] kitab:Noun+A3sg+ım:P1sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'P1sg', 'Acc']
+Last tag: Acc
+Has intermediate: True
+No intermediate suffixes found for kitabımı
+Pattern: re.compile('[yn]?[ıiuü]$', re.IGNORECASE)
+kitabımı               -> kitabım
+Best parse: Parse(word='ağacında', lemma='ağaç', pos='Noun', morphemes=['Noun', 'A3sg', 'P2sg', 'Loc'], formatted='[ağaç:Noun] ağac:Noun+A3sg+ın:P2sg+da:Loc')
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+No intermediate suffixes found for ağacında
+Pattern: re.compile('[n]?[dt][ae]$', re.IGNORECASE)
+ağacında               -> ağacı
+Best parse: Parse(word='köpeğime', lemma='köpek', pos='Noun', morphemes=['Noun', 'A3sg', 'P1sg', 'Dat'], formatted='[köpek:Noun] köpeğ:Noun+A3sg+im:P1sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'P1sg', 'Dat']
+Last tag: Dat
+Has intermediate: True
+No intermediate suffixes found for köpeğime
+Pattern: re.compile('[yn]?[ae]$', re.IGNORECASE)
+köpeğime               -> köpeğim
+Best parse: Parse(word='burnumu', lemma='Burn', pos='Noun', morphemes=['Noun', 'A3sg', 'P1sg', 'Acc'], formatted='[Burn:Noun,Prop] burn:Noun+A3sg+um:P1sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'P1sg', 'Acc']
+Last tag: Acc
+Has intermediate: True
+No intermediate suffixes found for burnumu
+Pattern: re.compile('[yn]?[ıiuü]$', re.IGNORECASE)
+burnumu                -> burnum
+Best parse: Parse(word='şehrinde', lemma='şehir', pos='Noun', morphemes=['Noun', 'A3sg', 'P2sg', 'Loc'], formatted='[şehir:Noun] şehr:Noun+A3sg+in:P2sg+de:Loc')
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+No intermediate suffixes found for şehrinde
+Pattern: re.compile('[n]?[dt][ae]$', re.IGNORECASE)
+şehrinde               -> şehri
+Best parse: Parse(word='masadan', lemma='masa', pos='Noun', morphemes=['Noun', 'A3sg', 'Abl'], formatted='[masa:Noun] masa:Noun+A3sg+dan:Abl')
+Morpheme tags: ['Noun', 'A3sg', 'Abl']
+Last tag: Abl
+Has intermediate: False
+masadan                -> masa
+Best parse: Parse(word='okula', lemma='okul', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[okul:Noun] okul:Noun+A3sg+a:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+okula                  -> okul
+Best parse: Parse(word='evlerimde', lemma='ev', pos='Noun', morphemes=['Noun', 'A3pl', 'P1sg', 'Loc'], formatted='[ev:Noun] ev:Noun+ler:A3pl+im:P1sg+de:Loc')
+Morpheme tags: ['Noun', 'A3pl', 'P1sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+No intermediate suffixes found for evlerimde
+Pattern: re.compile('[n]?[dt][ae]$', re.IGNORECASE)
+evlerimde              -> evlerim
+Best parse: Parse(word='öğretmenler', lemma='öğretmen', pos='Noun', morphemes=['Noun', 'A3pl'], formatted='[öğretmen:Noun] öğretmen:Noun+ler:A3pl')
+Morpheme tags: ['Noun', 'A3pl']
+Last tag: A3pl
+öğretmenler            -> öğretmenler
+Best parse: Parse(word='kullanıcılarının', lemma='kullanmak', pos='Noun', morphemes=['Verb', 'Agt', 'Noun', 'A3sg', 'P3pl', 'Gen'], formatted='[kullanmak:Verb] kullan:Verb|ıcı:Agt→Noun+A3sg+ları:P3pl+nın:Gen')
+Morpheme tags: ['Verb', 'Agt', 'Noun', 'A3sg', 'P3pl', 'Gen']
+Last tag: Gen
+Has intermediate: True
+No intermediate suffixes found for kullanıcılarının
+Pattern: re.compile('[yn]?[ıiuü]n$', re.IGNORECASE)
+kullanıcılarının       -> kullanıcıları
+Best parse: Parse(word='benim', lemma='ben', pos='Pron', morphemes=['Pron', 'A1sg', 'Gen'], formatted='[ben:Pron,Pers] ben:Pron+A1sg+im:Gen')
+Morpheme tags: ['Pron', 'A1sg', 'Gen']
+Last tag: Gen
+Has intermediate: False
+benim                  -> ben
+Best parse: Parse(word='sana', lemma='sanmak', pos='Verb', morphemes=['Verb', 'Opt', 'A3sg'], formatted='[sanmak:Verb] san:Verb+a:Opt+A3sg')
+Morpheme tags: ['Verb', 'Opt', 'A3sg']
+Last tag: A3sg
+sana                   -> sana
+Best parse: Parse(word='senin', lemma='se', pos='Noun', morphemes=['Noun', 'A3sg', 'Gen'], formatted='[se:Noun] se:Noun+A3sg+nin:Gen')
+Morpheme tags: ['Noun', 'A3sg', 'Gen']
+Last tag: Gen
+Has intermediate: False
+senin                  -> se
+Best parse: Parse(word='onun', lemma='onmak', pos='Verb', morphemes=['Verb', 'Imp', 'A2pl'], formatted='[onmak:Verb] on:Verb+Imp+un:A2pl')
+Morpheme tags: ['Verb', 'Imp', 'A2pl']
+Last tag: A2pl
+onun                   -> onun
+Best parse: Parse(word='onların', lemma='o', pos='Pron', morphemes=['Pron', 'A3pl', 'Gen'], formatted='[o:Pron,Demons] o:Pron+nlar:A3pl+ın:Gen')
+Morpheme tags: ['Pron', 'A3pl', 'Gen']
+Last tag: Gen
+Has intermediate: True
+No intermediate suffixes found for onların
+Pattern: re.compile('[yn]?[ıiuü]n$', re.IGNORECASE)
+onların                -> onlar
+Best parse: Parse(word='bizim', lemma='biz', pos='Pron', morphemes=['Pron', 'A1pl', 'Gen'], formatted='[biz:Pron,Pers] biz:Pron+A1pl+im:Gen')
+Morpheme tags: ['Pron', 'A1pl', 'Gen']
+Last tag: Gen
+Has intermediate: False
+bizim                  -> biz
+Best parse: Parse(word='kitaba', lemma='kitap', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[kitap:Noun] kitab:Noun+A3sg+a:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+kitaba                 -> kitap
+Best parse: Parse(word='dolabı', lemma='dolap', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[dolap:Noun] dolab:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+dolabı                 -> dolap
+Best parse: Parse(word='sebebi', lemma='sebep', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[sebep:Noun] sebeb:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+sebebi                 -> sebep
+Best parse: Parse(word='cevabı', lemma='cevap', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[cevap:Noun] cevab:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+cevabı                 -> cevap
+Best parse: Parse(word='hesabı', lemma='hesap', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[hesap:Noun] hesab:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+hesabı                 -> hesap
+Best parse: Parse(word='şarabı', lemma='şarap', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[şarap:Noun] şarab:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+şarabı                 -> şarap
+Best parse: Parse(word='mektubu', lemma='mektup', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[mektup:Noun] mektub:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+mektubu                -> mektup
+Best parse: Parse(word='kalıbı', lemma='kalıp', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[kalıp:Noun] kalıb:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kalıbı                 -> kalıp
+Best parse: Parse(word='cebi', lemma='cep', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[cep:Noun] ceb:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+cebi                   -> cep
+Best parse: Parse(word='kitapta', lemma='kitap', pos='Noun', morphemes=['Noun', 'A3sg', 'Loc'], formatted='[kitap:Noun] kitap:Noun+A3sg+ta:Loc')
+Morpheme tags: ['Noun', 'A3sg', 'Loc']
+Last tag: Loc
+Has intermediate: False
+kitapta                -> kitap
+Best parse: Parse(word='kitaptan', lemma='kitap', pos='Noun', morphemes=['Noun', 'A3sg', 'Abl'], formatted='[kitap:Noun] kitap:Noun+A3sg+tan:Abl')
+Morpheme tags: ['Noun', 'A3sg', 'Abl']
+Last tag: Abl
+Has intermediate: False
+kitaptan               -> kitap
+Best parse: Parse(word='ağacı', lemma='ağaç', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[ağaç:Noun] ağac:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ağacı                  -> ağaç
+Best parse: Parse(word='amacı', lemma='amaç', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[amaç:Noun] amac:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+amacı                  -> amaç
+Best parse: Parse(word='sonucu', lemma='sonuç', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[sonuç:Noun] sonuc:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+sonucu                 -> sonuç
+Best parse: Parse(word='aracı', lemma='aracı', pos='Adj', morphemes=['Adj'], formatted='[aracı:Adj] aracı:Adj')
+Morpheme tags: ['Adj']
+Last tag: Adj
+aracı                  -> aracı
+Best parse: Parse(word='kılıcı', lemma='kılmak', pos='Adj', morphemes=['Verb', 'Agt', 'Adj'], formatted='[kılmak:Verb] kıl:Verb|ıcı:Agt→Adj')
+Morpheme tags: ['Verb', 'Agt', 'Adj']
+Last tag: Adj
+kılıcı                 -> kılıcı
+Best parse: Parse(word='ilacı', lemma='ilâç', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[ilâç:Noun] ilac:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ilacı                  -> ilâç
+Best parse: Parse(word='inancı', lemma='inanç', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[inanç:Noun] inanc:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+inancı                 -> inanç
+Best parse: Parse(word='kazancı', lemma='kazanç', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[kazanç:Noun] kazanc:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kazancı                -> kazanç
+Best parse: Parse(word='borcu', lemma='borç', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[borç:Noun] borc:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+borcu                  -> borç
+Best parse: Parse(word='genci', lemma='Genc', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[Genc:Noun,Prop] genc:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+genci                  -> genc
+Best parse: Parse(word='ağaçta', lemma='ağaç', pos='Noun', morphemes=['Noun', 'A3sg', 'Loc'], formatted='[ağaç:Noun] ağaç:Noun+A3sg+ta:Loc')
+Morpheme tags: ['Noun', 'A3sg', 'Loc']
+Last tag: Loc
+Has intermediate: False
+ağaçta                 -> ağaç
+Best parse: Parse(word='ağaçtan', lemma='ağaç', pos='Noun', morphemes=['Noun', 'A3sg', 'Abl'], formatted='[ağaç:Noun] ağaç:Noun+A3sg+tan:Abl')
+Morpheme tags: ['Noun', 'A3sg', 'Abl']
+Last tag: Abl
+Has intermediate: False
+ağaçtan                -> ağaç
+Best parse: Parse(word='umudu', lemma='umut', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[umut:Noun] umud:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+umudu                  -> umut
+Best parse: Parse(word='yoğurdu', lemma='yoğurmak', pos='Verb', morphemes=['Verb', 'Past', 'A3sg'], formatted='[yoğurmak:Verb] yoğur:Verb+du:Past+A3sg')
+Morpheme tags: ['Verb', 'Past', 'A3sg']
+Last tag: A3sg
+yoğurdu                -> yoğurdu
+Best parse: Parse(word='yurdu', lemma='yumak', pos='Verb', morphemes=['Verb', 'Aor', 'Past', 'A3sg'], formatted='[yumak:Verb] yu:Verb+r:Aor+du:Past+A3sg')
+Morpheme tags: ['Verb', 'Aor', 'Past', 'A3sg']
+Last tag: A3sg
+yurdu                  -> yurdu
+Best parse: Parse(word='dördü', lemma='dört', pos='Noun', morphemes=['Num', 'Zero', 'Noun', 'A3sg', 'Acc'], formatted='[dört:Num,Card] dörd:Num|Zero→Noun+A3sg+ü:Acc')
+Morpheme tags: ['Num', 'Zero', 'Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+dördü                  -> dört
+Best parse: Parse(word='derdi', lemma='dermek', pos='Verb', morphemes=['Verb', 'Past', 'A3sg'], formatted='[dermek:Verb] der:Verb+di:Past+A3sg')
+Morpheme tags: ['Verb', 'Past', 'A3sg']
+Last tag: A3sg
+derdi                  -> derdi
+Best parse: Parse(word='kilidi', lemma='kilit', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[kilit:Noun] kilid:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kilidi                 -> kilit
+Best parse: Parse(word='senedi', lemma='senet', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[senet:Noun] sened:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+senedi                 -> senet
+Best parse: Parse(word='adedi', lemma='adedî', pos='Adv', morphemes=['Adv'], formatted='[adedî:Adv] adedi:Adv')
+Morpheme tags: ['Adv']
+Last tag: Adv
+adedi                  -> adedi
+Best parse: Parse(word='vücudu', lemma='vücut', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[vücut:Noun] vücud:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+vücudu                 -> vücut
+Best parse: Parse(word='muradı', lemma='Murad', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[Murad:Noun,Prop] murad:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+muradı                 -> murad
+Best parse: Parse(word='kanatta', lemma='kanat', pos='Noun', morphemes=['Noun', 'A3sg', 'Loc'], formatted='[kanat:Noun] kanat:Noun+A3sg+ta:Loc')
+Morpheme tags: ['Noun', 'A3sg', 'Loc']
+Last tag: Loc
+Has intermediate: False
+kanatta                -> kanat
+Best parse: Parse(word='hayatı', lemma='hayat', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[hayat:Noun] hayat:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+hayatı                 -> hayat
+Best parse: Parse(word='saati', lemma='saat', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[saat:Noun] saat:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+saati                  -> saat
+Best parse: Parse(word='bebeği', lemma='bebek', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[bebek:Noun] bebeğ:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+bebeği                 -> bebek
+Best parse: Parse(word='ayağa', lemma='ayak', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[ayak:Noun] ayağ:Noun+A3sg+a:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+ayağa                  -> ayak
+Best parse: Parse(word='sokağı', lemma='sokak', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[sokak:Noun] sokağ:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+sokağı                 -> sokak
+Best parse: Parse(word='ekmeği', lemma='ekmek', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[ekmek:Noun] ekmeğ:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ekmeği                 -> ekmek
+Best parse: Parse(word='ekmeğe', lemma='ekmek', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[ekmek:Noun] ekmeğ:Noun+A3sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+ekmeğe                 -> ekmek
+Best parse: Parse(word='ineği', lemma='inek', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[inek:Noun] ineğ:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ineği                  -> inek
+Best parse: Parse(word='çiçeği', lemma='çiçek', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[çiçek:Noun] çiçeğ:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+çiçeği                 -> çiçek
+Best parse: Parse(word='bileği', lemma='bilek', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[bilek:Noun] bileğ:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+bileği                 -> bilek
+Best parse: Parse(word='yüreği', lemma='yürek', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[yürek:Noun] yüreğ:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+yüreği                 -> yürek
+Best parse: Parse(word='parmağı', lemma='parmak', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[parmak:Noun] parmağ:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+parmağı                -> parmak
+Best parse: Parse(word='bacağı', lemma='bacak', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[bacak:Noun] bacağ:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+bacağı                 -> bacak
+Best parse: Parse(word='yatağı', lemma='yatak', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[yatak:Noun] yatağ:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+yatağı                 -> yatak
+Best parse: Parse(word='ocağı', lemma='ocak', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[ocak:Noun] ocağ:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ocağı                  -> ocak
+Best parse: Parse(word='uçağı', lemma='uçak', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[uçak:Noun] uçağ:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+uçağı                  -> uçak
+Best parse: Parse(word='köpekte', lemma='köpek', pos='Noun', morphemes=['Noun', 'A3sg', 'Loc'], formatted='[köpek:Noun] köpek:Noun+A3sg+te:Loc')
+Morpheme tags: ['Noun', 'A3sg', 'Loc']
+Last tag: Loc
+Has intermediate: False
+köpekte                -> köpek
+Best parse: Parse(word='rengi', lemma='renk', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[renk:Noun] reng:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+rengi                  -> renk
+Best parse: Parse(word='renge', lemma='renk', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[renk:Noun] reng:Noun+A3sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+renge                  -> renk
+Best parse: Parse(word='ahengi', lemma='ahenk', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[ahenk:Noun] aheng:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ahengi                 -> ahenk
+Best parse: Parse(word='çelengi', lemma='çelenk', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[çelenk:Noun] çeleng:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+çelengi                -> çelenk
+Best parse: Parse(word='kepengi', lemma='kepenk', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[kepenk:Noun] kepeng:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kepengi                -> kepenk
+Best parse: Parse(word='burna', lemma='Burn', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[Burn:Noun,Prop] burn:Noun+A3sg+a:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+burna                  -> burn
+Best parse: Parse(word='burnun', lemma='Burn', pos='Noun', morphemes=['Noun', 'A3sg', 'Gen'], formatted='[Burn:Noun,Prop] burn:Noun+A3sg+un:Gen')
+Morpheme tags: ['Noun', 'A3sg', 'Gen']
+Last tag: Gen
+Has intermediate: False
+burnun                 -> burn
+Best parse: Parse(word='şehri', lemma='şehir', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[şehir:Noun] şehr:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+şehri                  -> şehir
+Best parse: Parse(word='şehrin', lemma='şehir', pos='Noun', morphemes=['Noun', 'A3sg', 'Gen'], formatted='[şehir:Noun] şehr:Noun+A3sg+in:Gen')
+Morpheme tags: ['Noun', 'A3sg', 'Gen']
+Last tag: Gen
+Has intermediate: False
+şehrin                 -> şehir
+Best parse: Parse(word='ağzı', lemma='ağız', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[ağız:Noun] ağz:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ağzı                   -> ağız
+Best parse: Parse(word='ağza', lemma='ağız', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[ağız:Noun] ağz:Noun+A3sg+a:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+ağza                   -> ağız
+Best parse: Parse(word='oğlu', lemma='oğul', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[oğul:Noun] oğl:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+oğlu                   -> oğul
+Best parse: Parse(word='oğla', lemma='oğul', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[oğul:Noun] oğl:Noun+A3sg+a:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+oğla                   -> oğul
+Best parse: Parse(word='boynu', lemma='boyun', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[boyun:Noun] boyn:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+boynu                  -> boyun
+Best parse: Parse(word='boyna', lemma='boyun', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[boyun:Noun] boyn:Noun+A3sg+a:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+boyna                  -> boyun
+Best parse: Parse(word='karnı', lemma='karın', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[karın:Noun] karn:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+karnı                  -> karın
+Best parse: Parse(word='karna', lemma='karın', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[karın:Noun] karn:Noun+A3sg+a:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+karna                  -> karın
+Best parse: Parse(word='alnı', lemma='alın', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[alın:Noun] aln:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+alnı                   -> alın
+Best parse: Parse(word='omzu', lemma='omuz', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[omuz:Noun] omz:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+omzu                   -> omuz
+Best parse: Parse(word='beyni', lemma='beyin', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[beyin:Noun] beyn:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+beyni                  -> beyin
+Best parse: Parse(word='beyne', lemma='beyin', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[beyin:Noun] beyn:Noun+A3sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+beyne                  -> beyin
+Best parse: Parse(word='göğsü', lemma='gök', pos='Adj', morphemes=['Adj', 'JustLike', 'Adj'], formatted='[gök:Adj] göğ:Adj|sü:JustLike→Adj')
+Morpheme tags: ['Adj', 'JustLike', 'Adj']
+Last tag: Adj
+göğsü                  -> göğsü
+Best parse: Parse(word='nehri', lemma='nehir', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[nehir:Noun] nehr:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+nehri                  -> nehir
+Best parse: Parse(word='nehre', lemma='nehir', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[nehir:Noun] nehr:Noun+A3sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+nehre                  -> nehir
+Best parse: Parse(word='fikri', lemma='fikrî', pos='Adj', morphemes=['Adj'], formatted='[fikrî:Adj] fikri:Adj')
+Morpheme tags: ['Adj']
+Last tag: Adj
+fikri                  -> fikri
+Best parse: Parse(word='ömrü', lemma='ömür', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[ömür:Noun] ömr:Noun+A3sg+ü:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ömrü                   -> ömür
+Best parse: Parse(word='ismi', lemma='isim', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[isim:Noun] ism:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ismi                   -> isim
+Best parse: Parse(word='isme', lemma='isim', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[isim:Noun] ism:Noun+A3sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+isme                   -> isim
+Best parse: Parse(word='resmi', lemma='resmî', pos='Adj', morphemes=['Adj'], formatted='[resmî:Adj] resmi:Adj')
+Morpheme tags: ['Adj']
+Last tag: Adj
+resmi                  -> resmi
+Best parse: Parse(word='keşfi', lemma='keşif', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[keşif:Noun] keşf:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+keşfi                  -> keşif
+Best parse: Parse(word='vakti', lemma='vakit', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[vakit:Noun] vakt:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+vakti                  -> vakit
+Best parse: Parse(word='nakli', lemma='naklî', pos='Adj', morphemes=['Adj'], formatted='[naklî:Adj] nakli:Adj')
+Morpheme tags: ['Adj']
+Last tag: Adj
+nakli                  -> nakli
+Best parse: Parse(word='aklı', lemma='akıl', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[akıl:Noun] akl:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+aklı                   -> akıl
+Best parse: Parse(word='sabrı', lemma='sabır', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[sabır:Noun] sabr:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+sabrı                  -> sabır
+Best parse: Parse(word='izni', lemma='izin', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[izin:Noun] izn:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+izni                   -> izin
+Best parse: Parse(word='keyfi', lemma='keyfî', pos='Adj', morphemes=['Adj'], formatted='[keyfî:Adj] keyfi:Adj')
+Morpheme tags: ['Adj']
+Last tag: Adj
+keyfi                  -> keyfi
+Best parse: Parse(word='metni', lemma='metin', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[metin:Noun] metn:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+metni                  -> metin
+Best parse: Parse(word='hapsi', lemma='hapis', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[hapis:Noun] haps:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+hapsi                  -> hapis
+Best parse: Parse(word='bağrı', lemma='bağır', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[bağır:Noun] bağr:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+bağrı                  -> bağır
+Best parse: Parse(word='koynu', lemma='koyun', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[koyun:Noun] koyn:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+koynu                  -> koyun
+Best parse: Parse(word='kaybı', lemma='kayıp', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[kayıp:Noun] kayb:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kaybı                  -> kayıp
+Best parse: Parse(word='kayba', lemma='kayıp', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[kayıp:Noun] kayb:Noun+A3sg+a:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+kayba                  -> kayıp
+Best parse: Parse(word='ağzından', lemma='ağız', pos='Noun', morphemes=['Noun', 'A3sg', 'P2sg', 'Abl'], formatted='[ağız:Noun] ağz:Noun+A3sg+ın:P2sg+dan:Abl')
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Abl']
+Last tag: Abl
+Has intermediate: True
+No intermediate suffixes found for ağzından
+Pattern: re.compile('[n]?[dt][ae]n$', re.IGNORECASE)
+ağzından               -> ağzı
+Best parse: Parse(word='oğluna', lemma='oğul', pos='Noun', morphemes=['Noun', 'A3sg', 'P2sg', 'Dat'], formatted='[oğul:Noun] oğl:Noun+A3sg+un:P2sg+a:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Dat']
+Last tag: Dat
+Has intermediate: True
+No intermediate suffixes found for oğluna
+Pattern: re.compile('[yn]?[ae]$', re.IGNORECASE)
+oğluna                 -> oğlu
+Best parse: Parse(word='beynime', lemma='beyin', pos='Noun', morphemes=['Noun', 'A3sg', 'P1sg', 'Dat'], formatted='[beyin:Noun] beyn:Noun+A3sg+im:P1sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'P1sg', 'Dat']
+Last tag: Dat
+Has intermediate: True
+No intermediate suffixes found for beynime
+Pattern: re.compile('[yn]?[ae]$', re.IGNORECASE)
+beynime                -> beynim
+Best parse: Parse(word='karnında', lemma='karın', pos='Noun', morphemes=['Noun', 'A3sg', 'P2sg', 'Loc'], formatted='[karın:Noun] karn:Noun+A3sg+ın:P2sg+da:Loc')
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+No intermediate suffixes found for karnında
+Pattern: re.compile('[n]?[dt][ae]$', re.IGNORECASE)
+karnında               -> karnı
+Best parse: Parse(word='rengine', lemma='renk', pos='Noun', morphemes=['Noun', 'A3sg', 'P2sg', 'Dat'], formatted='[renk:Noun] reng:Noun+A3sg+in:P2sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Dat']
+Last tag: Dat
+Has intermediate: True
+No intermediate suffixes found for rengine
+Pattern: re.compile('[yn]?[ae]$', re.IGNORECASE)
+rengine                -> rengi
+Best parse: Parse(word='ayağımda', lemma='ayak', pos='Noun', morphemes=['Noun', 'A3sg', 'P1sg', 'Loc'], formatted='[ayak:Noun] ayağ:Noun+A3sg+ım:P1sg+da:Loc')
+Morpheme tags: ['Noun', 'A3sg', 'P1sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+No intermediate suffixes found for ayağımda
+Pattern: re.compile('[n]?[dt][ae]$', re.IGNORECASE)
+ayağımda               -> ayağım
+Best parse: Parse(word='burnunda', lemma='Burn', pos='Noun', morphemes=['Noun', 'A3sg', 'P2sg', 'Loc'], formatted='[Burn:Noun,Prop] burn:Noun+A3sg+un:P2sg+da:Loc')
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+No intermediate suffixes found for burnunda
+Pattern: re.compile('[n]?[dt][ae]$', re.IGNORECASE)
+burnunda               -> burnu
+Best parse: Parse(word='şehrine', lemma='şehir', pos='Noun', morphemes=['Noun', 'A3sg', 'P2sg', 'Dat'], formatted='[şehir:Noun] şehr:Noun+A3sg+in:P2sg+e:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Dat']
+Last tag: Dat
+Has intermediate: True
+No intermediate suffixes found for şehrine
+Pattern: re.compile('[yn]?[ae]$', re.IGNORECASE)
+şehrine                -> şehri
+Best parse: Parse(word='suyu', lemma='su', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[su:Noun] su:Noun+A3sg+yu:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+suyu                   -> su
+Best parse: Parse(word='suya', lemma='su', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[su:Noun] su:Noun+A3sg+ya:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+suya                   -> su
+Best parse: Parse(word='kutuya', lemma='kutu', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[kutu:Noun] kutu:Noun+A3sg+ya:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+kutuya                 -> kutu
+Best parse: Parse(word='kapıya', lemma='kapı', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[kapı:Noun] kapı:Noun+A3sg+ya:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+kapıya                 -> kapı
+Best parse: Parse(word='arabaya', lemma='araba', pos='Noun', morphemes=['Noun', 'A3sg', 'Dat'], formatted='[araba:Noun] araba:Noun+A3sg+ya:Dat')
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+arabaya                -> araba
+Best parse: Parse(word='suyun', lemma='su', pos='Noun', morphemes=['Noun', 'A3sg', 'Gen'], formatted='[su:Noun] su:Noun+A3sg+yun:Gen')
+Morpheme tags: ['Noun', 'A3sg', 'Gen']
+Last tag: Gen
+Has intermediate: False
+suyun                  -> su
+Best parse: Parse(word='bana', lemma='banmak', pos='Verb', morphemes=['Verb', 'Opt', 'A3sg'], formatted='[banmak:Verb] ban:Verb+a:Opt+A3sg')
+Morpheme tags: ['Verb', 'Opt', 'A3sg']
+Last tag: A3sg
+bana                   -> bana
+Best parse: Parse(word='bende', lemma='ben', pos='Pron', morphemes=['Pron', 'A1sg', 'Loc'], formatted='[ben:Pron,Pers] ben:Pron+A1sg+de:Loc')
+Morpheme tags: ['Pron', 'A1sg', 'Loc']
+Last tag: Loc
+Has intermediate: False
+bende                  -> ben
+Best parse: Parse(word='benden', lemma='ben', pos='Pron', morphemes=['Pron', 'A1sg', 'Abl'], formatted='[ben:Pron,Pers] ben:Pron+A1sg+den:Abl')
+Morpheme tags: ['Pron', 'A1sg', 'Abl']
+Last tag: Abl
+Has intermediate: False
+benden                 -> ben
+Best parse: Parse(word='bizi', lemma='biz', pos='Pron', morphemes=['Pron', 'A1pl', 'Acc'], formatted='[biz:Pron,Pers] biz:Pron+A1pl+i:Acc')
+Morpheme tags: ['Pron', 'A1pl', 'Acc']
+Last tag: Acc
+Has intermediate: False
+bizi                   -> biz
+Best parse: Parse(word='bize', lemma='biz', pos='Pron', morphemes=['Pron', 'A1pl', 'Dat'], formatted='[biz:Pron,Pers] biz:Pron+A1pl+e:Dat')
+Morpheme tags: ['Pron', 'A1pl', 'Dat']
+Last tag: Dat
+Has intermediate: False
+bize                   -> biz
+Best parse: Parse(word='size', lemma='siz', pos='Pron', morphemes=['Pron', 'A2pl', 'Dat'], formatted='[siz:Pron,Pers] siz:Pron+A2pl+e:Dat')
+Morpheme tags: ['Pron', 'A2pl', 'Dat']
+Last tag: Dat
+Has intermediate: False
+size                   -> siz
+Best parse: Parse(word='ona', lemma='onmak', pos='Verb', morphemes=['Verb', 'Opt', 'A3sg'], formatted='[onmak:Verb] on:Verb+a:Opt+A3sg')
+Morpheme tags: ['Verb', 'Opt', 'A3sg']
+Last tag: A3sg
+ona                    -> ona
+Best parse: Parse(word='buna', lemma='bunamak', pos='Verb', morphemes=['Verb', 'Imp', 'A2sg'], formatted='[bunamak:Verb] buna:Verb+Imp+A2sg')
+Morpheme tags: ['Verb', 'Imp', 'A2sg']
+Last tag: A2sg
+buna                   -> buna
+Best parse: Parse(word='şuna', lemma='şu', pos='Pron', morphemes=['Pron', 'A3sg', 'Dat'], formatted='[şu:Pron,Demons] şu:Pron+A3sg+na:Dat')
+Morpheme tags: ['Pron', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+şuna                   -> şu
+Best parse: Parse(word='atı', lemma='at', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[at:Noun] at:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+atı                    -> at
+Best parse: Parse(word='saçı', lemma='saç', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[saç:Noun] saç:Noun+A3sg+ı:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+saçı                   -> saç
+Best parse: Parse(word='topu', lemma='top', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[top:Noun] top:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+topu                   -> top
+Best parse: Parse(word='ipi', lemma='ip', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[ip:Noun] ip:Noun+A3sg+i:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ipi                    -> ip
+Best parse: Parse(word='suçu', lemma='suç', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[suç:Noun] suç:Noun+A3sg+u:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+suçu                   -> suç
+Best parse: Parse(word='gücü', lemma='güç', pos='Noun', morphemes=['Noun', 'A3sg', 'Acc'], formatted='[güç:Noun] güc:Noun+A3sg+ü:Acc')
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+gücü                   -> güç
+Best parse: Parse(word='koyunları', lemma='koyun', pos='Noun', morphemes=['Noun', 'A3pl', 'Acc'], formatted='[koyun:Noun] koyun:Noun+lar:A3pl+ı:Acc')
+Morpheme tags: ['Noun', 'A3pl', 'Acc']
+Last tag: Acc
+Has intermediate: True
+No intermediate suffixes found for koyunları
+Pattern: re.compile('[yn]?[ıiuü]$', re.IGNORECASE)
+koyunları              -> koyunlar
+
+ ---------------------------------------- 
+
+kitabı                 -> kitap
+ağaca                  -> ağaca
+kanadı                 -> kanadı
+köpeğe                 -> köpek
+burnu                  -> burn
+şehre                  -> şehir
+kitabımı               -> kitabım
+ağacında               -> ağacı
+köpeğime               -> köpeğim
+burnumu                -> burnum
+şehrinde               -> şehri
+masadan                -> masa
+okula                  -> okul
+evlerimde              -> evlerim
+öğretmenler            -> öğretmenler
+kullanıcılarının       -> kullanıcıları
+benim                  -> ben
+sana                   -> sana
+senin                  -> se
+onun                   -> onun
+onların                -> onlar
+bizim                  -> biz
+kitaba                 -> kitap
+dolabı                 -> dolap
+sebebi                 -> sebep
+cevabı                 -> cevap
+hesabı                 -> hesap
+şarabı                 -> şarap
+mektubu                -> mektup
+kalıbı                 -> kalıp
+cebi                   -> cep
+kitapta                -> kitap
+kitaptan               -> kitap
+ağacı                  -> ağaç
+amacı                  -> amaç
+sonucu                 -> sonuç
+aracı                  -> aracı
+kılıcı                 -> kılıcı
+ilacı                  -> ilâç
+inancı                 -> inanç
+kazancı                -> kazanç
+borcu                  -> borç
+genci                  -> genc
+ağaçta                 -> ağaç
+ağaçtan                -> ağaç
+umudu                  -> umut
+yoğurdu                -> yoğurdu
+yurdu                  -> yurdu
+dördü                  -> dört
+derdi                  -> derdi
+kilidi                 -> kilit
+senedi                 -> senet
+adedi                  -> adedi
+vücudu                 -> vücut
+muradı                 -> murad
+kanatta                -> kanat
+hayatı                 -> hayat
+saati                  -> saat
+bebeği                 -> bebek
+ayağa                  -> ayak
+sokağı                 -> sokak
+ekmeği                 -> ekmek
+ekmeğe                 -> ekmek
+ineği                  -> inek
+çiçeği                 -> çiçek
+bileği                 -> bilek
+yüreği                 -> yürek
+parmağı                -> parmak
+bacağı                 -> bacak
+yatağı                 -> yatak
+ocağı                  -> ocak
+uçağı                  -> uçak
+köpekte                -> köpek
+rengi                  -> renk
+renge                  -> renk
+ahengi                 -> ahenk
+çelengi                -> çelenk
+kepengi                -> kepenk
+burna                  -> burn
+burnun                 -> burn
+şehri                  -> şehir
+şehrin                 -> şehir
+ağzı                   -> ağız
+ağza                   -> ağız
+oğlu                   -> oğul
+oğla                   -> oğul
+boynu                  -> boyun
+boyna                  -> boyun
+karnı                  -> karın
+karna                  -> karın
+alnı                   -> alın
+omzu                   -> omuz
+beyni                  -> beyin
+beyne                  -> beyin
+göğsü                  -> göğsü
+nehri                  -> nehir
+nehre                  -> nehir
+fikri                  -> fikri
+ömrü                   -> ömür
+ismi                   -> isim
+isme                   -> isim
+resmi                  -> resmi
+keşfi                  -> keşif
+vakti                  -> vakit
+nakli                  -> nakli
+aklı                   -> akıl
+sabrı                  -> sabır
+izni                   -> izin
+keyfi                  -> keyfi
+metni                  -> metin
+hapsi                  -> hapis
+bağrı                  -> bağır
+koynu                  -> koyun
+kaybı                  -> kayıp
+kayba                  -> kayıp
+ağzından               -> ağzı
+oğluna                 -> oğlu
+beynime                -> beynim
+karnında               -> karnı
+rengine                -> rengi
+ayağımda               -> ayağım
+burnunda               -> burnu
+şehrine                -> şehri
+suyu                   -> su
+suya                   -> su
+kutuya                 -> kutu
+kapıya                 -> kapı
+arabaya                -> araba
+suyun                  -> su
+bana                   -> bana
+bende                  -> ben
+benden                 -> ben
+bizi                   -> biz
+bize                   -> biz
+size                   -> siz
+ona                    -> ona
+buna                   -> buna
+şuna                   -> şu
+atı                    -> at
+saçı                   -> saç
+topu                   -> top
+ipi                    -> ip
+suçu                   -> suç
+gücü                   -> güç
+koyunları              -> koyunlar
+

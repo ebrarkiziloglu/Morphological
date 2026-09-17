@@ -1,0 +1,12 @@
+{
+  "backend": "tokenizers",
+  "bos_token": "[BOS]",
+  "cls_token": "[CLS]",
+  "eos_token": "[EOS]",
+  "mask_token": "[MASK]",
+  "model_max_length": 512,
+  "pad_token": "[PAD]",
+  "sep_token": "[SEP]",
+  "tokenizer_class": "TokenizersBackend",
+  "unk_token": "[UNK]"
+}

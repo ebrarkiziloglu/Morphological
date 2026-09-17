@@ -1,0 +1,871 @@
+Original               -> Stripped
+----------------------------------------
+Best parse: [kitap:Noun] kitab:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kitabı                 -> kitap
+Best parse: [ağa:Adj] ağa:Adj|ca:Ly→Adv
+Morpheme tags: ['Adj', 'Ly', 'Adv']
+Last tag: Adv
+ağaca                  -> ağaca
+Best parse: [kanamak:Verb] kana:Verb+dı:Past+A3sg
+Morpheme tags: ['Verb', 'Past', 'A3sg']
+Last tag: A3sg
+kanadı                 -> kanadı
+Best parse: [köpek:Noun] köpeğ:Noun+A3sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+köpeğe                 -> köpek
+Best parse: [burun:Noun] burn:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+burnu                  -> burun
+Best parse: [şehir:Noun] şehr:Noun+A3sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+şehre                  -> şehir
+Best parse: [kitap:Noun] kitab:Noun+A3sg+ım:P1sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'P1sg', 'Acc']
+Last tag: Acc
+Has intermediate: True
+Last surface: 'ı'
+kitabımı               -> kitabım
+Best parse: [ağaç:Noun] ağac:Noun+A3sg+ın:P2sg+da:Loc
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+Last surface: 'da'
+ağacında               -> ağacın
+Best parse: [köpek:Noun] köpeğ:Noun+A3sg+im:P1sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'P1sg', 'Dat']
+Last tag: Dat
+Has intermediate: True
+Last surface: 'e'
+köpeğime               -> köpeğim
+Best parse: [burun:Noun] burn:Noun+A3sg+um:P1sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'P1sg', 'Acc']
+Last tag: Acc
+Has intermediate: True
+Last surface: 'u'
+burnumu                -> burnum
+Best parse: [şehir:Noun] şehr:Noun+A3sg+in:P2sg+de:Loc
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+Last surface: 'de'
+şehrinde               -> şehrin
+Best parse: [masa:Noun] masa:Noun+A3sg+dan:Abl
+Morpheme tags: ['Noun', 'A3sg', 'Abl']
+Last tag: Abl
+Has intermediate: False
+masadan                -> masa
+Best parse: [okul:Noun] okul:Noun+A3sg+a:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+okula                  -> okul
+Best parse: [ev:Noun] ev:Noun+ler:A3pl+im:P1sg+de:Loc
+Morpheme tags: ['Noun', 'A3pl', 'P1sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+Last surface: 'de'
+evlerimde              -> evlerim
+Best parse: [öğretmen:Noun] öğretmen:Noun+ler:A3pl
+Morpheme tags: ['Noun', 'A3pl']
+Last tag: A3pl
+öğretmenler            -> öğretmenler
+Best parse: [kullanmak:Verb] kullan:Verb|ıcı:Agt→Noun+A3sg+ları:P3pl+nın:Gen
+Morpheme tags: ['Verb', 'Agt', 'Noun', 'A3sg', 'P3pl', 'Gen']
+Last tag: Gen
+Has intermediate: True
+Last surface: 'nın'
+kullanıcılarının       -> kullanıcıları
+Best parse: [ben:Noun] ben:Noun+A3sg+im:P1sg
+Morpheme tags: ['Noun', 'A3sg', 'P1sg']
+Last tag: P1sg
+benim                  -> benim
+Best parse: [sanmak:Verb] san:Verb+a:Opt+A3sg
+Morpheme tags: ['Verb', 'Opt', 'A3sg']
+Last tag: A3sg
+sana                   -> sana
+Best parse: [se:Noun] se:Noun+A3sg+nin:Gen
+Morpheme tags: ['Noun', 'A3sg', 'Gen']
+Last tag: Gen
+Has intermediate: False
+senin                  -> se
+Best parse: [onmak:Verb] on:Verb+Imp+un:A2pl
+Morpheme tags: ['Verb', 'Imp', 'A2pl']
+Last tag: A2pl
+onun                   -> onun
+Best parse: [o:Pron, Demons] o:Pron+nlar:A3pl+ın:Gen
+Morpheme tags: ['Pron', 'A3pl', 'Gen']
+Last tag: Gen
+Has intermediate: True
+Last surface: 'ın'
+onların                -> onlar
+Best parse: [biz:Noun] biz:Noun+A3sg+im:P1sg
+Morpheme tags: ['Noun', 'A3sg', 'P1sg']
+Last tag: P1sg
+bizim                  -> bizim
+Best parse: [kitap:Noun] kitab:Noun+A3sg+a:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+kitaba                 -> kitap
+Best parse: [dolap:Noun] dolab:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+dolabı                 -> dolap
+Best parse: [sebep:Noun] sebeb:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+sebebi                 -> sebep
+Best parse: [cevap:Noun] cevab:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+cevabı                 -> cevap
+Best parse: [hesap:Noun] hesab:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+hesabı                 -> hesap
+Best parse: [şarap:Noun] şarab:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+şarabı                 -> şarap
+Best parse: [mektup:Noun] mektub:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+mektubu                -> mektup
+Best parse: [kalıp:Noun] kalıb:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kalıbı                 -> kalıp
+Best parse: [cep:Noun] ceb:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+cebi                   -> cep
+Best parse: [Kitap:Noun, Prop] kitap:Noun+A3sg+ta:Loc
+Morpheme tags: ['Noun', 'A3sg', 'Loc']
+Last tag: Loc
+Has intermediate: False
+kitapta                -> kitap
+Best parse: [Kitap:Noun, Prop] kitap:Noun+A3sg+tan:Abl
+Morpheme tags: ['Noun', 'A3sg', 'Abl']
+Last tag: Abl
+Has intermediate: False
+kitaptan               -> kitap
+Best parse: [ağaç:Noun] ağac:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ağacı                  -> ağaç
+Best parse: [amaç:Noun] amac:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+amacı                  -> amaç
+Best parse: [sonuç:Noun] sonuc:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+sonucu                 -> sonuç
+Best parse: [aracı:Adj] aracı:Adj
+Morpheme tags: ['Adj']
+Last tag: Adj
+aracı                  -> aracı
+Best parse: [kılmak:Verb] kıl:Verb|ıcı:Agt→Adj
+Morpheme tags: ['Verb', 'Agt', 'Adj']
+Last tag: Adj
+kılıcı                 -> kılıcı
+Best parse: [ilâç:Noun] ilac:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ilacı                  -> ilâç
+Best parse: [inanç:Noun] inanc:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+inancı                 -> inanç
+Best parse: [kazanç:Noun] kazanc:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kazancı                -> kazanç
+Best parse: [borç:Noun] borc:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+borcu                  -> borç
+Best parse: [genç:Noun] genc:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+genci                  -> genç
+Best parse: [ağaç:Noun] ağaç:Noun+A3sg+ta:Loc
+Morpheme tags: ['Noun', 'A3sg', 'Loc']
+Last tag: Loc
+Has intermediate: False
+ağaçta                 -> ağaç
+Best parse: [ağaç:Noun] ağaç:Noun+A3sg+tan:Abl
+Morpheme tags: ['Noun', 'A3sg', 'Abl']
+Last tag: Abl
+Has intermediate: False
+ağaçtan                -> ağaç
+Best parse: [umut:Noun] umud:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+umudu                  -> umut
+Best parse: [yoğurmak:Verb] yoğur:Verb+du:Past+A3sg
+Morpheme tags: ['Verb', 'Past', 'A3sg']
+Last tag: A3sg
+yoğurdu                -> yoğurdu
+Best parse: [yumak:Verb] yu:Verb+r:Aor+du:Past+A3sg
+Morpheme tags: ['Verb', 'Aor', 'Past', 'A3sg']
+Last tag: A3sg
+yurdu                  -> yurdu
+Best parse: [dört:Num, Card] dörd:Num|Zero→Noun+A3sg+ü:Acc
+Morpheme tags: ['Num', 'Zero', 'Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+dördü                  -> dört
+Best parse: [dermek:Verb] der:Verb+di:Past+A3sg
+Morpheme tags: ['Verb', 'Past', 'A3sg']
+Last tag: A3sg
+derdi                  -> derdi
+Best parse: [kilit:Noun] kilid:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kilidi                 -> kilit
+Best parse: [senet:Noun] sened:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+senedi                 -> senet
+Best parse: [adedî:Adv] adedi:Adv
+Morpheme tags: ['Adv']
+Last tag: Adv
+adedi                  -> adedi
+Best parse: [vücut:Noun] vücud:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+vücudu                 -> vücut
+Best parse: [murat:Noun] murad:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+muradı                 -> murat
+Best parse: [kanat:Noun] kanat:Noun+A3sg+ta:Loc
+Morpheme tags: ['Noun', 'A3sg', 'Loc']
+Last tag: Loc
+Has intermediate: False
+kanatta                -> kanat
+Best parse: [hayat:Noun] hayat:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+hayatı                 -> hayat
+Best parse: [saat:Noun] saat:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+saati                  -> saat
+Best parse: [bebek:Noun] bebeğ:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+bebeği                 -> bebek
+Best parse: [ayak:Noun] ayağ:Noun+A3sg+a:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+ayağa                  -> ayak
+Best parse: [sokak:Noun] sokağ:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+sokağı                 -> sokak
+Best parse: [ekmek:Noun] ekmeğ:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ekmeği                 -> ekmek
+Best parse: [ekmek:Noun] ekmeğ:Noun+A3sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+ekmeğe                 -> ekmek
+Best parse: [inek:Noun] ineğ:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ineği                  -> inek
+Best parse: [çiçek:Noun] çiçeğ:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+çiçeği                 -> çiçek
+Best parse: [bilek:Noun] bileğ:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+bileği                 -> bilek
+Best parse: [yürek:Noun] yüreğ:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+yüreği                 -> yürek
+Best parse: [parmak:Noun] parmağ:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+parmağı                -> parmak
+Best parse: [bacak:Noun] bacağ:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+bacağı                 -> bacak
+Best parse: [yatak:Noun] yatağ:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+yatağı                 -> yatak
+Best parse: [ocak:Noun] ocağ:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ocağı                  -> ocak
+Best parse: [uçak:Noun] uçağ:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+uçağı                  -> uçak
+Best parse: [köpek:Noun] köpek:Noun+A3sg+te:Loc
+Morpheme tags: ['Noun', 'A3sg', 'Loc']
+Last tag: Loc
+Has intermediate: False
+köpekte                -> köpek
+Best parse: [renk:Noun] reng:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+rengi                  -> renk
+Best parse: [renk:Noun] reng:Noun+A3sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+renge                  -> renk
+Best parse: [ahenk:Noun] aheng:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ahengi                 -> ahenk
+Best parse: [çelenk:Noun] çeleng:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+çelengi                -> çelenk
+Best parse: [kepenk:Noun] kepeng:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kepengi                -> kepenk
+Best parse: [burun:Noun] burn:Noun+A3sg+a:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+burna                  -> burun
+Best parse: [burun:Noun] burn:Noun+A3sg+un:Gen
+Morpheme tags: ['Noun', 'A3sg', 'Gen']
+Last tag: Gen
+Has intermediate: False
+burnun                 -> burun
+Best parse: [şehir:Noun] şehr:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+şehri                  -> şehir
+Best parse: [şehir:Noun] şehr:Noun+A3sg+in:Gen
+Morpheme tags: ['Noun', 'A3sg', 'Gen']
+Last tag: Gen
+Has intermediate: False
+şehrin                 -> şehir
+Best parse: [ağız:Noun] ağz:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ağzı                   -> ağız
+Best parse: [ağız:Noun] ağz:Noun+A3sg+a:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+ağza                   -> ağız
+Best parse: [oğul:Noun] oğl:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+oğlu                   -> oğul
+Best parse: [oğul:Noun] oğl:Noun+A3sg+a:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+oğla                   -> oğul
+Best parse: [boyun:Noun] boyn:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+boynu                  -> boyun
+Best parse: [boyun:Noun] boyn:Noun+A3sg+a:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+boyna                  -> boyun
+Best parse: [karın:Noun] karn:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+karnı                  -> karın
+Best parse: [karın:Noun] karn:Noun+A3sg+a:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+karna                  -> karın
+Best parse: [alın:Noun] aln:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+alnı                   -> alın
+Best parse: [omuz:Noun] omz:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+omzu                   -> omuz
+Best parse: [beyin:Noun] beyn:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+beyni                  -> beyin
+Best parse: [beyin:Noun] beyn:Noun+A3sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+beyne                  -> beyin
+Best parse: [göğüs:Noun] göğs:Noun+A3sg+ü:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+göğsü                  -> göğüs
+Best parse: [nehir:Noun] nehr:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+nehri                  -> nehir
+Best parse: [nehir:Noun] nehr:Noun+A3sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+nehre                  -> nehir
+Best parse: [fikrî:Adj] fikri:Adj
+Morpheme tags: ['Adj']
+Last tag: Adj
+fikri                  -> fikri
+Best parse: [ömür:Noun] ömr:Noun+A3sg+ü:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ömrü                   -> ömür
+Best parse: [isim:Noun] ism:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ismi                   -> isim
+Best parse: [isim:Noun] ism:Noun+A3sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+isme                   -> isim
+Best parse: [resmî:Adj] resmi:Adj
+Morpheme tags: ['Adj']
+Last tag: Adj
+resmi                  -> resmi
+Best parse: [keşif:Noun] keşf:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+keşfi                  -> keşif
+Best parse: [vakit:Noun] vakt:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+vakti                  -> vakit
+Best parse: [naklî:Adj] nakli:Adj
+Morpheme tags: ['Adj']
+Last tag: Adj
+nakli                  -> nakli
+Best parse: [akıl:Noun] akl:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+aklı                   -> akıl
+Best parse: [sabır:Noun] sabr:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+sabrı                  -> sabır
+Best parse: [izin:Noun] izn:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+izni                   -> izin
+Best parse: [keyfî:Adj] keyfi:Adj
+Morpheme tags: ['Adj']
+Last tag: Adj
+keyfi                  -> keyfi
+Best parse: [metin:Noun] metn:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+metni                  -> metin
+Best parse: [hapis:Noun] haps:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+hapsi                  -> hapis
+Best parse: [bağır:Noun] bağr:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+bağrı                  -> bağır
+Best parse: [koyun:Noun] koyn:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+koynu                  -> koyun
+Best parse: [kayıp:Noun] kayb:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+kaybı                  -> kayıp
+Best parse: [kayıp:Noun] kayb:Noun+A3sg+a:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+kayba                  -> kayıp
+Best parse: [ağız:Noun] ağz:Noun+A3sg+ın:P2sg+dan:Abl
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Abl']
+Last tag: Abl
+Has intermediate: True
+Last surface: 'dan'
+ağzından               -> ağzın
+Best parse: [oğul:Noun] oğl:Noun+A3sg+un:P2sg+a:Dat
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Dat']
+Last tag: Dat
+Has intermediate: True
+Last surface: 'a'
+oğluna                 -> oğlun
+Best parse: [beyin:Noun] beyn:Noun+A3sg+im:P1sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'P1sg', 'Dat']
+Last tag: Dat
+Has intermediate: True
+Last surface: 'e'
+beynime                -> beynim
+Best parse: [karın:Noun] karn:Noun+A3sg+ın:P2sg+da:Loc
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+Last surface: 'da'
+karnında               -> karnın
+Best parse: [renk:Noun] reng:Noun+A3sg+in:P2sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Dat']
+Last tag: Dat
+Has intermediate: True
+Last surface: 'e'
+rengine                -> rengin
+Best parse: [ayak:Noun] ayağ:Noun+A3sg+ım:P1sg+da:Loc
+Morpheme tags: ['Noun', 'A3sg', 'P1sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+Last surface: 'da'
+ayağımda               -> ayağım
+Best parse: [burun:Noun] burn:Noun+A3sg+un:P2sg+da:Loc
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Loc']
+Last tag: Loc
+Has intermediate: True
+Last surface: 'da'
+burnunda               -> burnun
+Best parse: [şehir:Noun] şehr:Noun+A3sg+in:P2sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'P2sg', 'Dat']
+Last tag: Dat
+Has intermediate: True
+Last surface: 'e'
+şehrine                -> şehrin
+Best parse: [su:Noun] su:Noun+A3sg+yu:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+suyu                   -> su
+Best parse: [su:Noun] su:Noun+A3sg+ya:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+suya                   -> su
+Best parse: [kutu:Noun] kutu:Noun+A3sg+ya:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+kutuya                 -> kutu
+Best parse: [kapı:Noun] kapı:Noun+A3sg+ya:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+kapıya                 -> kapı
+Best parse: [araba:Noun] araba:Noun+A3sg+ya:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+arabaya                -> araba
+Best parse: [su:Noun] su:Noun+A3sg+yun:Gen
+Morpheme tags: ['Noun', 'A3sg', 'Gen']
+Last tag: Gen
+Has intermediate: False
+suyun                  -> su
+Best parse: [banmak:Verb] ban:Verb+a:Opt+A3sg
+Morpheme tags: ['Verb', 'Opt', 'A3sg']
+Last tag: A3sg
+bana                   -> bana
+Best parse: [ben:Noun] ben:Noun+A3sg+de:Loc
+Morpheme tags: ['Noun', 'A3sg', 'Loc']
+Last tag: Loc
+Has intermediate: False
+bende                  -> ben
+Best parse: [ben:Noun] ben:Noun+A3sg+den:Abl
+Morpheme tags: ['Noun', 'A3sg', 'Abl']
+Last tag: Abl
+Has intermediate: False
+benden                 -> ben
+Best parse: [biz:Noun] biz:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+bizi                   -> biz
+Best parse: [biz:Noun] biz:Noun+A3sg+e:Dat
+Morpheme tags: ['Noun', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+bize                   -> biz
+Best parse: [siz:Pron, Pers] siz:Pron+A2pl+e:Dat
+Morpheme tags: ['Pron', 'A2pl', 'Dat']
+Last tag: Dat
+Has intermediate: False
+size                   -> siz
+Best parse: [onmak:Verb] on:Verb+a:Opt+A3sg
+Morpheme tags: ['Verb', 'Opt', 'A3sg']
+Last tag: A3sg
+ona                    -> ona
+Best parse: [bunamak:Verb] buna:Verb+Imp+A2sg
+Morpheme tags: ['Verb', 'Imp', 'A2sg']
+Last tag: A2sg
+buna                   -> buna
+Best parse: [şu:Pron, Demons] şu:Pron+A3sg+na:Dat
+Morpheme tags: ['Pron', 'A3sg', 'Dat']
+Last tag: Dat
+Has intermediate: False
+şuna                   -> şu
+Best parse: [At:Noun, Prop] at:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+atı                    -> at
+Best parse: [saç:Noun] saç:Noun+A3sg+ı:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+saçı                   -> saç
+Best parse: [top:Noun] top:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+topu                   -> top
+Best parse: [ip:Noun] ip:Noun+A3sg+i:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+ipi                    -> ip
+Best parse: [suç:Noun] suç:Noun+A3sg+u:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+suçu                   -> suç
+Best parse: [güç:Noun] güc:Noun+A3sg+ü:Acc
+Morpheme tags: ['Noun', 'A3sg', 'Acc']
+Last tag: Acc
+Has intermediate: False
+gücü                   -> güç
+Best parse: [koyun:Noun] koyun:Noun+A3sg+ları:P3pl
+Morpheme tags: ['Noun', 'A3sg', 'P3pl']
+Last tag: P3pl
+koyunları              -> koyunları
+
+ ---------------------------------------- 
+
+kitabı                 -> kitap
+ağaca                  -> ağaca
+kanadı                 -> kanadı
+köpeğe                 -> köpek
+burnu                  -> burun
+şehre                  -> şehir
+kitabımı               -> kitabım
+ağacında               -> ağacın
+köpeğime               -> köpeğim
+burnumu                -> burnum
+şehrinde               -> şehrin
+masadan                -> masa
+okula                  -> okul
+evlerimde              -> evlerim
+öğretmenler            -> öğretmenler
+kullanıcılarının       -> kullanıcıları
+benim                  -> benim
+sana                   -> sana
+senin                  -> se
+onun                   -> onun
+onların                -> onlar
+bizim                  -> bizim
+kitaba                 -> kitap
+dolabı                 -> dolap
+sebebi                 -> sebep
+cevabı                 -> cevap
+hesabı                 -> hesap
+şarabı                 -> şarap
+mektubu                -> mektup
+kalıbı                 -> kalıp
+cebi                   -> cep
+kitapta                -> kitap
+kitaptan               -> kitap
+ağacı                  -> ağaç
+amacı                  -> amaç
+sonucu                 -> sonuç
+aracı                  -> aracı
+kılıcı                 -> kılıcı
+ilacı                  -> ilâç
+inancı                 -> inanç
+kazancı                -> kazanç
+borcu                  -> borç
+genci                  -> genç
+ağaçta                 -> ağaç
+ağaçtan                -> ağaç
+umudu                  -> umut
+yoğurdu                -> yoğurdu
+yurdu                  -> yurdu
+dördü                  -> dört
+derdi                  -> derdi
+kilidi                 -> kilit
+senedi                 -> senet
+adedi                  -> adedi
+vücudu                 -> vücut
+muradı                 -> murat
+kanatta                -> kanat
+hayatı                 -> hayat
+saati                  -> saat
+bebeği                 -> bebek
+ayağa                  -> ayak
+sokağı                 -> sokak
+ekmeği                 -> ekmek
+ekmeğe                 -> ekmek
+ineği                  -> inek
+çiçeği                 -> çiçek
+bileği                 -> bilek
+yüreği                 -> yürek
+parmağı                -> parmak
+bacağı                 -> bacak
+yatağı                 -> yatak
+ocağı                  -> ocak
+uçağı                  -> uçak
+köpekte                -> köpek
+rengi                  -> renk
+renge                  -> renk
+ahengi                 -> ahenk
+çelengi                -> çelenk
+kepengi                -> kepenk
+burna                  -> burun
+burnun                 -> burun
+şehri                  -> şehir
+şehrin                 -> şehir
+ağzı                   -> ağız
+ağza                   -> ağız
+oğlu                   -> oğul
+oğla                   -> oğul
+boynu                  -> boyun
+boyna                  -> boyun
+karnı                  -> karın
+karna                  -> karın
+alnı                   -> alın
+omzu                   -> omuz
+beyni                  -> beyin
+beyne                  -> beyin
+göğsü                  -> göğüs
+nehri                  -> nehir
+nehre                  -> nehir
+fikri                  -> fikri
+ömrü                   -> ömür
+ismi                   -> isim
+isme                   -> isim
+resmi                  -> resmi
+keşfi                  -> keşif
+vakti                  -> vakit
+nakli                  -> nakli
+aklı                   -> akıl
+sabrı                  -> sabır
+izni                   -> izin
+keyfi                  -> keyfi
+metni                  -> metin
+hapsi                  -> hapis
+bağrı                  -> bağır
+koynu                  -> koyun
+kaybı                  -> kayıp
+kayba                  -> kayıp
+ağzından               -> ağzın
+oğluna                 -> oğlun
+beynime                -> beynim
+karnında               -> karnın
+rengine                -> rengin
+ayağımda               -> ayağım
+burnunda               -> burnun
+şehrine                -> şehrin
+suyu                   -> su
+suya                   -> su
+kutuya                 -> kutu
+kapıya                 -> kapı
+arabaya                -> araba
+suyun                  -> su
+bana                   -> bana
+bende                  -> ben
+benden                 -> ben
+bizi                   -> biz
+bize                   -> biz
+size                   -> siz
+ona                    -> ona
+buna                   -> buna
+şuna                   -> şu
+atı                    -> at
+saçı                   -> saç
+topu                   -> top
+ipi                    -> ip
+suçu                   -> suç
+gücü                   -> güç
+koyunları              -> koyunları
+
