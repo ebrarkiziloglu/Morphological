@@ -8,8 +8,7 @@ source ~/.bashrc
 conda activate morph2
 
 echo "Starting German extraction at $(date)"
-# Pass your token as an argument or ensure it's in your environment
-export HF_TOKEN=***REMOVED_HF_TOKEN***
+# HF_TOKEN is expected to be exported from ~/.bashrc
 
 python3 pretraining_dataset/10m_subset/extract_10m_nllb_german.py --token $HF_TOKEN \
     --original-bytes 59_652_031 \
