@@ -87,6 +87,7 @@ def build_model_and_tokenizer(
     num_layers: int = 6,
     num_heads: int = 12,
     max_position_embeddings: int = 512,
+    attn_implementation: Optional[str] = None,
 ) -> Tuple[GPT2LMHeadModel, AutoTokenizer]:
     """Build a decoder-only GPT-2 style model and tokenizer.
 
@@ -108,7 +109,14 @@ def build_model_and_tokenizer(
         bos_token_id=getattr(tokenizer, "bos_token_id", None),
         eos_token_id=getattr(tokenizer, "eos_token_id", None),
         pad_token_id=tokenizer.pad_token_id,
+        attn_implementation=attn_implementation,
     )
+    if attn_implementation == "flash_attention_3" and config.attn_pdrop > 0:
+        logger.warning(
+            f"[Init] attn_implementation=flash_attention_3 does not support attention "
+            f"dropout; attn_pdrop={config.attn_pdrop} will be silently ignored during "
+            "attention (resid/embd dropout are unaffected)."
+        )
 
     model = GPT2LMHeadModel(config)
     model.resize_token_embeddings(len(tokenizer))
@@ -148,6 +156,7 @@ def _ensure_usable_tokenizer(tokenizer, source: str):
 def load_model_and_tokenizer_from_checkpoint(
     checkpoint_path: str,
     tokenizer_path: str,
+    attn_implementation: Optional[str] = None,
 ) -> Tuple[GPT2LMHeadModel, AutoTokenizer]:
     """Load a saved GPT-2 LM checkpoint; tokenizer always comes from tokenizer_path."""
     if not os.path.isdir(checkpoint_path):
@@ -156,7 +165,9 @@ def load_model_and_tokenizer_from_checkpoint(
     logger.info(f"[Init] Loading tokenizer from {tokenizer_path}")
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
     _ensure_usable_tokenizer(tokenizer, tokenizer_path)
-    model = GPT2LMHeadModel.from_pretrained(checkpoint_path)
+    model = GPT2LMHeadModel.from_pretrained(
+        checkpoint_path, attn_implementation=attn_implementation
+    )
     logger.info(
         f"[Init] Loaded checkpoint: vocab_size={tokenizer.vocab_size}, "
         f"len(tokenizer)={len(tokenizer)}, pad_token_id={tokenizer.pad_token_id}, "
@@ -248,6 +259,7 @@ def train_one_phase(
     tokenizer=None,
     save_epochs: Optional[List[int]] = None,
     seed: int = 0,
+    bf16: bool = False,
 ):
     """
     Train for exactly ``num_epochs`` passes over ``dataloader``.
@@ -259,6 +271,10 @@ def train_one_phase(
     boundaries as ``{save_dir}/ep{E}/seed_{seed}``. When ``save_epochs`` is None,
     every epoch is saved; otherwise only the listed 1-based epoch numbers are
     saved (e.g. [5, 10]).
+
+    ``bf16`` runs the forward pass under ``torch.autocast`` in bfloat16 (model
+    weights and the optimizer stay in fp32). This is required when using a
+    Flash Attention implementation, which only accepts fp16/bf16 tensors.
     """
     if num_epochs <= 0:
         logger.info(f"[{phase_name}] num_epochs={num_epochs}; skipping training.")
@@ -331,8 +347,11 @@ def train_one_phase(
         micro_in_acc = 0
         for step, batch in enumerate(dataloader):
             batch = move_batch_to_device(batch, device)
-            outputs = model(**batch)
-            loss = outputs.loss / grad_acc
+            with torch.autocast(
+                device_type=device.type, dtype=torch.bfloat16, enabled=bf16
+            ):
+                outputs = model(**batch)
+                loss = outputs.loss / grad_acc
             if not torch.isfinite(loss):
                 raise RuntimeError(
                     f"[{phase_name}] Non-finite loss at optimizer_step={global_step}, "
@@ -417,7 +436,7 @@ def parse_args():
     parser.add_argument(
         "--tokenizer_path",
         type=str,
-        default="src/tokenizer/tokenizer_char",
+        default="../tokenizer/tokenizer_char",
         help="Path to the character tokenizer. Always used, including with "
         "--resume_from; epoch checkpoints store model weights only.",
     )
@@ -486,6 +505,24 @@ def parse_args():
     parser.add_argument("--num_heads", type=int, default=12)
     parser.add_argument("--max_position_embeddings", type=int, default=512)
 
+    parser.add_argument(
+        "--attn_implementation",
+        type=str,
+        default=None,
+        choices=["eager", "sdpa", "flash_attention_2", "flash_attention_3"],
+        help="Attention backend. 'flash_attention_3' needs a Hopper+ GPU "
+        "(sm_90, e.g. H100/H200) and either the flash_attn_3 package or the "
+        "'kernels' package (auto-fetches a prebuilt FA3 kernel from the HF Hub). "
+        "Requires --bf16. Default: transformers picks 'sdpa' automatically.",
+    )
+    parser.add_argument(
+        "--bf16",
+        action="store_true",
+        help="Run the forward pass under bfloat16 autocast (weights/optimizer "
+        "stay fp32). Required when --attn_implementation is a flash attention "
+        "variant, since those kernels only accept fp16/bf16 tensors.",
+    )
+
     args = parser.parse_args()
     if args.resume_from is None and args.phase1_path is None:
         parser.error(
@@ -493,6 +530,16 @@ def parse_args():
         )
     if args.epochs_phase2 > 0 and not args.phase2_path:
         parser.error("--phase2_path is required when --epochs_phase2 > 0.")
+    if (
+        args.attn_implementation
+        and args.attn_implementation.startswith("flash_attention")
+        and not args.bf16
+    ):
+        parser.error(
+            f"--attn_implementation {args.attn_implementation} requires --bf16 "
+            "(flash attention kernels only accept fp16/bf16 tensors, and this "
+            "script does not support fp16)."
+        )
     return args
 
 
@@ -509,7 +556,9 @@ def main():
 
     if args.resume_from:
         model, tokenizer = load_model_and_tokenizer_from_checkpoint(
-            args.resume_from, tokenizer_path=args.tokenizer_path
+            args.resume_from,
+            tokenizer_path=args.tokenizer_path,
+            attn_implementation=args.attn_implementation,
         )
     else:
         model, tokenizer = build_model_and_tokenizer(
@@ -519,6 +568,7 @@ def main():
             num_layers=args.num_layers,
             num_heads=args.num_heads,
             max_position_embeddings=args.max_position_embeddings,
+            attn_implementation=args.attn_implementation,
         )
 
     os.makedirs(args.out, exist_ok=True)
@@ -563,6 +613,7 @@ def main():
                 tokenizer=tokenizer,
                 save_epochs=save_epochs_p1,
                 seed=args.seed,
+                bf16=args.bf16,
             )
 
             # Convenience alias for the final Phase-1 state
@@ -624,6 +675,7 @@ def main():
         tokenizer=tokenizer,
         save_epochs=save_epochs_p2,
         seed=args.seed,
+        bf16=args.bf16,
     )
 
     # Final checkpoint

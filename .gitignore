@@ -3,6 +3,7 @@ __pycache__/
 .claude/
 
 logs/
+alex_logs_old/
 models/
 data/
 
