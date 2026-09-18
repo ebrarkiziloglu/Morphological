@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition a40
+#SBATCH --partition h100
 #SBATCH --gres gpu:1
 #SBATCH --output logs/%j_EVAL_MULTISEED_char-en-de_phase2_shuffled.out
 #SBATCH --time 24:00:00
@@ -21,9 +21,8 @@ source ~/.bashrc
 conda activate morph2
 
 echo "Starting multi-seed PPL evaluation at $(date)"
-export HF_TOKEN=***REMOVED_HF_TOKEN***
-
-ROOT="${HOME}/Morphological"
+ 
+ROOT="/hnvme/workspace/b279bb15-morph/Morphological"
 cd "${ROOT}"
 DATIVE_JSON="${ROOT}/src/eval_dataset/dative_accusative_pairs.json"
 ACCUSATIVE_JSON="${ROOT}/src/eval_dataset/accusative_dative_pairs.json"

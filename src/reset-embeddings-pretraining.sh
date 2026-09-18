@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition a100
+#SBATCH --partition h100
 #SBATCH --gres gpu:1
 #SBATCH --output logs/%j_gpt-reset-emb-tr-lr2-5e-5.out
 #SBATCH --time 24:00:00
@@ -8,8 +8,7 @@ source ~/.bashrc
 conda activate morph2
 
 echo "Starting pre-training at $(date)"
-export HF_TOKEN=***REMOVED_HF_TOKEN***
-
+ 
 # python3 src/train.py \
 #     --tokenizer_path ~/Morphological/src/tokenizer/tokenizer_char/ \
 #     --resume_from ~/Morphological/models/v3/char-en-de/phase1_eng \

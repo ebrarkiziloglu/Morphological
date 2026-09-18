@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition a40
+#SBATCH --partition h100
 #SBATCH --gres gpu:1
 #SBATCH --output logs/%j_EVAL_PPL_HF_EN.out
 #SBATCH --time 24:00:00
@@ -11,13 +11,12 @@ source ~/.bashrc
 conda activate morph2
 
 echo "Starting multi-seed PPL evaluation at $(date)"
-export HF_TOKEN=***REMOVED_HF_TOKEN***
-export HF_HUB_DISABLE_XET=1
+ export HF_HUB_DISABLE_XET=1
 export HF_HUB_DOWNLOAD_TIMEOUT=1800
 export HF_HOME=/home/vault/b279bb/b279bb15/hf_home
 mkdir -p "${HF_HOME}"
 
-ROOT="${HOME}/Morphological"
+ROOT="/hnvme/workspace/b279bb15-morph/Morphological"
 cd "${ROOT}"
 REPO_IDS="morph-char-en-de"
 # SUBDIR="phase_1/regular,phase_1/shuffled,phase_2/regular/de_nllb/regular,phase_2/regular/de_nllb/reset_embeddings,phase_2/shuffled/de_nllb/regular"

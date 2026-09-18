@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition a40
+#SBATCH --partition h100
 #SBATCH --gres gpu:1
 #SBATCH --output logs/%j_remove_cases_from_tr_nllb.out
 #SBATCH --time 24:00:00

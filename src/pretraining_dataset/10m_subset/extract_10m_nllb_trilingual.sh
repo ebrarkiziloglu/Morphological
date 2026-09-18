@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition a40
+#SBATCH --partition h100
 #SBATCH --gres gpu:1
 #SBATCH --output logs/%j_extract_10m_nllb_trilingual.out
 #SBATCH --time 24:00:00

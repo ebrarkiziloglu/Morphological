@@ -1,41 +1,20 @@
 #!/bin/bash
-#SBATCH --partition a40
+#SBATCH --partition h100
 #SBATCH --gres gpu:1
-#SBATCH --output logs/%j_de_only_phase2_nllb_seed_4.out
+#SBATCH --output logs/%j_de_only_phase2_regular_seeds_4.out
 #SBATCH --time 24:00:00
 SEEDS=(4)
-
-# Multi-seed two-phase pretraining
-# --------------------------------
-# Phase 1 (EN and TR separately):
-#   - LR = 1e-4, 10 epochs
-#   - checkpoints after epochs 5 and 10
-#   - 5 seeds
-# Phase 2 (German, resume from Phase-1 epoch-10 of the same seed):
-#   - LR = 5e-5, 5 epochs
-#   - checkpoint after every epoch
-#   - 5 seeds
-#
-# Layout under each language output dir:
-#   seed_<S>/Phase1_epoch_5
-#   seed_<S>/Phase1_epoch_10
-#   seed_<S>/phase1_<l1>              # alias of final Phase-1 state
-#   seed_<S>/phase2_from_ep10/Phase2_epoch_{1..5}
-#   seed_<S>/phase2_from_ep10/phase2_<l1>_deu
 
 source ~/.bashrc
 conda activate morph2
 
 echo "Starting multi-seed pre-training at $(date)"
-export HF_TOKEN=***REMOVED_HF_TOKEN***
-
-ROOT="${HOME}/Morphological"
+ 
+ROOT="/hnvme/workspace/b279bb15-morph/Morphological"
 TOKENIZER="${ROOT}/src/tokenizer/tokenizer_char/"
 PHASE2_DATA="${ROOT}/data/NLLB_10M_subset/NLLB_10M.de"
 
-# Five independent training seeds
-# SEEDS=(0 1 2 3 4)
-DE_OUT="${ROOT}/models/v3/char-de-nllb"
+DE_OUT="${ROOT}/models/v3/char-de/phase_2/de_nllb/regular"
 
 for SEED in "${SEEDS[@]}"; do
     echo "=== Phase 2 DE from scratch | seed=${SEED} | $(date) ==="
@@ -54,7 +33,9 @@ for SEED in "${SEEDS[@]}"; do
         --lr_phase2 5e-5 \
         --grad_acc 2 \
         --logging_steps 100 \
-        --seed "${SEED}"
+        --seed "${SEED}" \
+        --attn_implementation flash_attention_3 \
+        --bf16
 done
 
 echo "Finished multi-seed pre-training at $(date)"

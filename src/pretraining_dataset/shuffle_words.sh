@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition a40
+#SBATCH --partition h100
 #SBATCH --gres gpu:1
 #SBATCH --output logs/%j_shuffle-NLLB-TR-stripped-words-pretraining-dataset.out
 #SBATCH --time 24:00:00

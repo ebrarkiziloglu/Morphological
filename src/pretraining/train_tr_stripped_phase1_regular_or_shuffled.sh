@@ -1,43 +1,40 @@
 #!/bin/bash
-#SBATCH --partition a40
+#SBATCH --partition h100
 #SBATCH --gres gpu:1
-#SBATCH --output logs/%j_tr_shuffled_phase1_nllb_suffix_stripped_seed_4.out
+#SBATCH --output logs/%j_tr_stripped_phase1_regular_or_shuffled_seeds_0.out
 #SBATCH --time 24:00:00
-SEEDS=(4)
+SEEDS=(0)
 
 # Multi-seed two-phase pretraining
 # --------------------------------
-# Phase 1 (EN and TR separately):
-#   - LR = 1e-4, 10 epochs
-#   - checkpoints after epochs 5 and 10
+# Phase 1 (EN, TR and ZH separately):
+#   - LR = 1e-4, 5 epochs
+#   - checkpoints after epochs 5
 #   - 5 seeds
-# Phase 2 (German, resume from Phase-1 epoch-10 of the same seed):
+# Phase 2 (German, resume from Phase-1 epoch-5 of the same seed):
 #   - LR = 5e-5, 5 epochs
 #   - checkpoint after every epoch
 #   - 5 seeds
-#
-# Layout under each language output dir:
-#   seed_<S>/Phase1_epoch_5
-#   seed_<S>/Phase1_epoch_10
-#   seed_<S>/phase1_<l1>              # alias of final Phase-1 state
-#   seed_<S>/phase2_from_ep10/Phase2_epoch_{1..5}
-#   seed_<S>/phase2_from_ep10/phase2_<l1>_deu
 
 source ~/.bashrc
 conda activate morph2
 
 echo "Starting multi-seed pre-training at $(date)"
-export HF_TOKEN=***REMOVED_HF_TOKEN***
-
-ROOT="${HOME}/Morphological"
+ 
+ROOT="/hnvme/workspace/b279bb15-morph/Morphological"
 TOKENIZER="${ROOT}/src/tokenizer/tokenizer_char/"
 
-# Five independent training seeds
 # ---------------------------------------------------------------------------
-# Phase 1 — Turkish (NLLB 10M) Shuffled
+# Phase 1 — Turkish (NLLB 10M)
 # ---------------------------------------------------------------------------
-TR_P1="${ROOT}/data/NLLB_10M_subset_shuffled/NLLB_10M_stripped_shuffled_geometric_r0.3.tr"
-TR_OUT="${ROOT}/models/v3/char-tr-de/phase_1/shuffled_stripped/"
+
+# REGULAR:
+TR_P1="${ROOT}/data/NLLB_10M_subset/NLLB_10M_stripped.tr"
+TR_OUT="${ROOT}/models/v3/char-tr-de/phase_1/stripped/regular/"
+
+# SHUFFLED:
+# TR_P1="${ROOT}/data/NLLB_10M_subset_shuffled/NLLB_10M_stripped_shuffled_geometric_r0.3.tr"
+# TR_OUT="${ROOT}/models/v3/char-tr-de/phase_1/stripped/shuffled/"
 
 for SEED in "${SEEDS[@]}"; do
     echo "=== Phase 1 Turkish | seed=${SEED} | $(date) ==="
@@ -56,7 +53,9 @@ for SEED in "${SEEDS[@]}"; do
         --lr 1e-4 \
         --grad_acc 2 \
         --logging_steps 100 \
-        --seed "${SEED}"
+        --seed "${SEED}" \
+        --attn_implementation flash_attention_3 \
+        --bf16
 done
 
 echo "Finished multi-seed pre-training at $(date)"
