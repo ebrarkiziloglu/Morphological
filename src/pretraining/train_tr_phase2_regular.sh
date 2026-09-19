@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --partition h100
 #SBATCH --gres gpu:1
-#SBATCH --output logs/%j_tr_phase2_de_nllb_seeds_4.out
+#SBATCH --output logs/%j_tr_phase2_de_nllb_all_seeds.out
 #SBATCH --time 24:00:00
-SEEDS=(4)
+SEEDS=(0 1 2 3 4)
 
 # Multi-seed two-phase pretraining
 # --------------------------------
@@ -53,7 +53,7 @@ for SEED in "${SEEDS[@]}"; do
         --out "${TR_OUT_PHASE2}/" \
         --max_seq_len 1024 \
         --max_position_embeddings 1024 \
-        --batch_size 16 \
+         --batch_size 32 \
         --epochs_phase2 5 \
         --lr_phase2 5e-5 \
         --grad_acc 2 \

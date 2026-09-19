@@ -28,7 +28,7 @@ for SEED in "${SEEDS[@]}"; do
         --out "${DE_OUT}/" \
         --max_seq_len 1024 \
         --max_position_embeddings 1024 \
-        --batch_size 16 \
+         --batch_size 32 \
         --epochs_phase2 5 \
         --lr_phase2 5e-5 \
         --grad_acc 2 \
