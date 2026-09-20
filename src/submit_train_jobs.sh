@@ -1,0 +1,12 @@
+sbatch pretraining/train_en_phase2_reset_embed.sh
+sbatch pretraining/train_en_phase2_reset_embed_shifted.sh  
+sbatch pretraining/train_en_phase2_shifted.sh                   
+sbatch pretraining/train_tr_phase2_reset_embed.sh                   
+sbatch pretraining/train_tr_phase2_reset_embed_shifted.sh
+sbatch pretraining/train_tr_phase2_shifted.sh 
+sbatch pretraining/train_tr_stripped_phase2_reset_embed.sh
+sbatch pretraining/train_tr_stripped_phase2_reset_embed_shifted.sh
+sbatch pretraining/train_tr_stripped_phase2_shifted.sh        
+sbatch pretraining/train_zh_phase2_reset_embed.sh
+sbatch pretraining/train_zh_phase2_reset_embed_shifted.sh
+sbatch pretraining/train_zh_phase2_shifted.sh
