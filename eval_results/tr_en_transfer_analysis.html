@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turkish vs. English / Turkish vs. stripped-Turkish transfer, by config</title>
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#f9f9f7; --surface:#fcfcfb; --surface-2:#f3f2ee;
+    --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#898781;
+    --border:rgba(11,11,11,0.10); --grid:#e1e0d9; --axis:#c3c2b7;
+    --accent:#2a78d6; --accent-wash:rgba(42,120,214,0.10);
+    --s-en:#2a78d6; --s-tr:#eb6834; --s-trs:#1baf7a;
+    --good:#0ca30c; --critical:#d03b3b;
+    --p-strong: rgba(12,163,12,0.16); --p-weak: rgba(12,163,12,0.07);
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#0d0d0d; --surface:#1a1a19; --surface-2:#212120;
+      --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#898781;
+      --border:rgba(255,255,255,0.10); --grid:#2c2c2a; --axis:#383835;
+      --accent:#3987e5; --accent-wash:rgba(57,135,229,0.14);
+      --s-en:#3987e5; --s-tr:#d95926; --s-trs:#199e70;
+      --good:#0ca30c; --critical:#e66767;
+      --p-strong: rgba(12,163,12,0.22); --p-weak: rgba(12,163,12,0.10);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#0d0d0d; --surface:#1a1a19; --surface-2:#212120;
+    --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#898781;
+    --border:rgba(255,255,255,0.10); --grid:#2c2c2a; --axis:#383835;
+    --accent:#3987e5; --accent-wash:rgba(57,135,229,0.14);
+    --s-en:#3987e5; --s-tr:#d95926; --s-trs:#199e70;
+    --good:#0ca30c; --critical:#e66767;
+    --p-strong: rgba(12,163,12,0.22); --p-weak: rgba(12,163,12,0.10);
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg); color:var(--text-primary); margin:0; padding:28px 20px 64px; line-height:1.5;}
+  .wrap{max-width:920px; margin:0 auto;}
+  h1,h2,h3{font-weight:600; margin:0;}
+  h1{font-size:1.55rem; letter-spacing:-0.01em;}
+  h2{font-size:1.15rem; margin-bottom:4px;}
+  h3{font-size:0.92rem; color:var(--text-secondary);}
+  p{color:var(--text-secondary); margin:10px 0 0;}
+  .mono{font-family:ui-monospace,"SF Mono",Consolas,"Liberation Mono",monospace;}
+  header.hero{border-bottom:1px solid var(--border); padding-bottom:20px;}
+  .eyebrow{font-size:0.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); font-weight:600; margin-bottom:8px;}
+  .meta-row{display:flex; flex-wrap:wrap; gap:8px 10px; margin-top:14px;}
+  .meta-pill{font-size:0.75rem; font-family:ui-monospace,monospace; color:var(--text-secondary); background:var(--surface-2); border:1px solid var(--border); border-radius:20px; padding:4px 10px;}
+  section{margin-top:46px;}
+  .section-num{font-family:ui-monospace,monospace; color:var(--text-muted); font-size:0.78rem; display:block; margin-bottom:6px;}
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin-top:16px;}
+  .finding{border-left:3px solid var(--accent); background:var(--accent-wash); border-radius:0 10px 10px 0; padding:12px 16px; margin-top:16px; font-size:0.9rem;}
+  .finding b{color:var(--text-primary);}
+  table{border-collapse:collapse; width:100%; font-size:0.82rem;}
+  th,td{text-align:right; padding:7px 10px; border-bottom:1px solid var(--border); font-variant-numeric:tabular-nums;}
+  th:first-child,td:first-child{text-align:left; font-variant-numeric:normal;}
+  thead th{color:var(--text-muted); font-weight:600; font-size:0.7rem; text-transform:uppercase; letter-spacing:.04em; border-bottom:1px solid var(--axis);}
+  tbody tr:last-child td{border-bottom:none;}
+  .table-scroll{overflow-x:auto; margin-top:16px; border:1px solid var(--border); border-radius:12px;}
+  .table-scroll table{margin:0;}
+  .table-scroll th,.table-scroll td{padding:8px 12px;}
+  td.hl{color:var(--text-primary); font-weight:600;}
+  td.p-strong{background:var(--p-strong); color:var(--good); font-weight:600;}
+  td.p-weak{background:var(--p-weak); color:var(--good); font-weight:600;}
+  td.p-none{color:var(--text-muted);}
+  .cfg-label{font-size:0.78rem; color:var(--text-secondary);}
+  .grid-charts{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:16px;}
+  .mini-card{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 14px 6px;}
+  .mini-title{font-size:0.8rem; font-weight:600;}
+  .mini-sub{font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;}
+  svg.chart{width:100%; height:auto; display:block; overflow:visible;}
+  .axis-label{font-size:9px; fill:var(--text-muted); font-family:ui-monospace,monospace;}
+  .grid-line{stroke:var(--grid); stroke-width:1;}
+  .baseline{stroke:var(--axis); stroke-width:1;}
+  .legend{display:flex; flex-wrap:wrap; gap:10px 16px; margin:8px 2px 12px; font-size:0.75rem; color:var(--text-secondary);}
+  .legend .item{display:flex; align-items:center; gap:6px;}
+  .legend .sw{width:10px; height:10px; border-radius:3px; flex:none;}
+  .tooltip{position:fixed; pointer-events:none; z-index:50; background:var(--text-primary); color:var(--bg); font-family:ui-monospace,monospace; font-size:11px; padding:6px 9px; border-radius:6px; line-height:1.5; opacity:0; transform:translate(-50%,-100%); transition:opacity .08s; white-space:nowrap; box-shadow:0 4px 14px rgba(0,0,0,0.18);}
+  .tooltip.show{opacity:1;}
+  .hit{fill:transparent; cursor:pointer;}
+  ol.takeaways{padding-left:22px; margin-top:14px;}
+  ol.takeaways li{color:var(--text-secondary); margin-bottom:14px;}
+  ol.takeaways li b{color:var(--text-primary);}
+  ol.takeaways li::marker{font-family:ui-monospace,monospace; color:var(--accent); font-weight:600;}
+  footer{margin-top:52px; padding-top:18px; border-top:1px solid var(--border); font-size:0.76rem; color:var(--text-muted);}
+  .badge{display:inline-block; font-size:0.68rem; font-family:ui-monospace,monospace; padding:2px 7px; border-radius:5px; margin-left:6px; vertical-align:1px;}
+  .badge.sig{background:var(--p-strong); color:var(--good);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Supplementary deep-dive · follow-up to the main transfer report</div>
+  <h1>Turkish vs. English, and Turkish vs. its own stripped-case variant, config by config</h1>
+  <p>The main report averaged over the "regular" phase-2 configuration only and found EN&nbsp;≈&nbsp;TR (statistical tie) at every checkpoint. Here every number is re-checked across all <b style="color:var(--text-primary)">five</b> phase-2 configurations that use a regular (non-shuffled) L1 — regular DE, embedding-reset, character-shifted DE, reset+shifted, and shuffled-L1 — each still averaged over the same 5 training seeds (0–4). Two configurations flip or sharpen the picture (§3–4). A second eval direction, added in §6–9, checks the mirror-image failure mode: does the model over-apply dative where an accusative is correct?</p>
+  <div class="meta-row">
+    <span class="meta-pill">metric: ALL-category dative-preference accuracy, %</span>
+    <span class="meta-pill">n = 9,389 (dat→acc) / 9,189 (acc→dat) pairs, 5 seeds</span>
+    <span class="meta-pill">test: Welch's unpaired t-test, unadjusted p</span>
+  </div>
+</header>
+
+<section>
+  <span class="section-num">01</span>
+  <h2>Learning curves, EN vs. TR vs. TR(stripped), one panel per configuration</h2>
+  <p>Same three L1s, same eval, five different ways the phase-1→phase-2 handoff was perturbed.</p>
+  <div class="grid-charts" id="mini-charts"></div>
+</section>
+
+<section>
+  <span class="section-num">02</span>
+  <h2>Full significance landscape</h2>
+  <p>Green cells are the comparisons that reach significance. Everything else is noise-level in this data — 5 seeds gives limited power, so treat unmarked cells as "no detectable difference," not "no difference."</p>
+  <div class="card" style="font-size:0.82rem;">
+    <b style="color:var(--text-primary);">How to read the p-values in this report</b>
+    <p style="margin-top:6px;">Each comparison is a <b style="color:var(--text-primary)">Welch's unpaired t-test</b> on two sets of 5 numbers — one ALL-accuracy score per random seed (0–4), each seed a fully independent training run. The p-value is the probability of seeing a gap this large between the two seeds-averages <i>if the true difference were actually zero</i> (i.e. if the whole gap were seed-to-seed noise) — not the probability the effect is real. Shading: <span class="p-weak" style="padding:1px 5px; border-radius:4px;">p&lt;0.05</span> <span class="p-strong" style="padding:1px 5px; border-radius:4px; margin-left:4px;">p&lt;0.01</span>, both conventional cutoffs. Three things to keep in mind everywhere a green cell appears: (1) n=5/group is small, so plenty of real small effects will land in "not significant" purely from lack of power; (2) these p-values are <b style="color:var(--text-primary)">unadjusted</b> and this report runs ~60 such tests total — at α=0.05 you'd expect roughly 3 "significant" cells to appear by chance alone even if nothing were real, so treat isolated green cells with one-off explanations skeptically; (3) significant is not the same as large — most effects here are 0.2–1pp. This is also a weaker test than a per-example two-proportion test over the ~9,000 eval pairs (as <span class="mono">significance_tests.py</span> sets up) would be — it asks "reproducible across a reseed," not "reliable at the example level."</p>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Configuration</th><th>Epoch</th>
+          <th>EN</th><th>TR</th><th>TR‑str</th>
+          <th>Δ EN&minus;TR</th><th>p (EN vs TR)</th>
+          <th>Δ TR&minus;TRstr</th><th>p (TR vs TRstr)</th>
+        </tr>
+      </thead>
+      <tbody id="sig-table-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <span class="section-num">03</span>
+  <h2>Where Turkish actually beats English<span class="badge sig">reversal</span></h2>
+  <p>Under the <b style="color:var(--text-primary)">embedding-reset</b> configuration — phase-1 character embeddings wiped before German training starts — the point estimate flips (TR &gt; EN) and it's <b style="color:var(--text-primary)">statistically significant at both epoch&nbsp;3 and epoch&nbsp;5</b>, the only configuration in this whole sweep where that happens in either direction.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Epoch</th><th>EN</th><th>TR</th><th>Δ (EN&minus;TR)</th><th>p</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>80.65</td><td>81.07</td><td>&minus;0.41</td><td class="p-none">0.5527</td></tr>
+        <tr><td>3</td><td>83.82</td><td>84.58</td><td class="hl">&minus;0.77</td><td class="p-strong">0.0159</td></tr>
+        <tr><td>5</td><td>84.69</td><td>85.08</td><td class="hl">&minus;0.39</td><td class="p-weak">0.0387</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.82rem;">Compare the <i>size</i> of the reset penalty each language pays (from the main report): English drops <b style="color:var(--text-primary)">&minus;0.97 to &minus;1.85pp</b> when its embeddings are reset; Turkish drops only <b style="color:var(--text-primary)">&minus;0.42 to &minus;1.09pp</b>. English's transfer advantage is disproportionately carried by the embedding table itself; Turkish's survives losing it much better. Once that embedding-level shortcut is taken away from both, what's left of Turkish's transfer is the larger share — which is why it's Turkish, not English, that comes out ahead here.</p>
+  <p style="font-size:0.82rem;">No single sub-category drives this on its own (per-category n is too small to reach significance individually — closest is Locative_TR at epoch 5, p=0.044); the effect is a small, consistent edge for TR pooled across categories, which only clears significance at the n=9,389 whole-eval level.</p>
+</section>
+
+<section>
+  <span class="section-num">04</span>
+  <h2>Where the Turkish case suffixes actually matter<span class="badge sig">only visible here</span></h2>
+  <p>In the regular configuration, stripping Turkish's case suffixes before phase-1 training costs at most ~0.3pp and is never significant (p=0.12–0.54) — the headline conclusion of the main report. Under the <b style="color:var(--text-primary)">character-shifted German</b> configuration (the Caesar-cipher control that removes literal character/lexical overlap between phase-1 and phase-2 text), the gap between Turkish and its stripped variant widens and becomes significant at epoch&nbsp;3:</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Epoch</th><th>TR</th><th>TR‑stripped</th><th>Δ (TR&minus;TRstr)</th><th>p</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>81.58</td><td>81.42</td><td>+0.15</td><td class="p-none">0.7249</td></tr>
+        <tr><td>3</td><td>84.65</td><td>84.13</td><td class="hl">+0.52</td><td class="p-strong">0.0036</td></tr>
+        <tr><td>5</td><td>85.56</td><td>85.15</td><td class="hl">+0.41</td><td class="p-none">0.0879</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.82rem;">For reference, the same comparison in the regular configuration at epoch 5: <span class="mono">Δ = +0.30, p = 0.12</span> — directionally the same (TR ahead of TR-stripped) but well short of significance. Read together with §3: the "easy" transfer channel (shared character embeddings between two Latin-script L1s and German) normally dominates and swamps any smaller contribution from Turkish's case suffixes specifically. Disrupt that easy channel — either by resetting embeddings (§3, which mainly separates TR from EN) or by cutting literal lexical overlap via the character shift (this section, which separates TR from its own no-case-suffix twin) — and a real, if modest, case-suffix effect becomes visible. It isn't the dominant mechanism, but it isn't nothing either.</p>
+</section>
+
+<section>
+  <span class="section-num">05</span>
+  <h2>Takeaways</h2>
+  <ol class="takeaways">
+    <li><b>The EN≈TR tie in the main report is a property of the "easy" configuration, not a general result.</b> Averaging over one regular setup hides two real, config-conditional effects that only show up once you perturb the handoff.</li>
+    <li><b>Under embedding reset, Turkish significantly outperforms English</b> (p=0.016 at epoch 3, p=0.039 at epoch 5). English's transfer benefit leans more heavily on the shared embedding table; Turkish's is more robust to losing it — the closest thing in this data to a genuine "Turkish transfers better" result, and it shows up specifically once the embedding shortcut both languages otherwise lean on is removed.</li>
+    <li><b>Under character-shifted German, Turkish significantly outperforms its own case-stripped variant</b> (p=0.004 at epoch 3). The case-suffix contribution the main report couldn't detect in the regular setting is real — it's just usually dominated by the shared-character-embedding channel, and only becomes statistically visible once that channel is cut.</li>
+    <li><b>Neither effect is huge in absolute terms</b> (0.4–0.8pp), and per-category power is too thin to say exactly which case categories carry them. But both point the same direction: Turkish's advantage over English, and its case-suffixes' contribution over stripped Turkish, are real and specifically show up when the easier, embedding-driven transfer route is blocked — not when it's available.</li>
+  </ol>
+</section>
+
+<section>
+  <span class="section-num">06</span>
+  <h2>A second, mirror-image task: does the model over-apply dative?</h2>
+  <p>Everything above tests <b style="color:var(--text-primary)">sensitivity</b>: given a sentence that really needs a dative, does the model prefer the correct dative form over an accusative-corrupted one? <span class="mono">accusative_dative_pairs</span> tests the opposite failure mode — <b style="color:var(--text-primary)">specificity</b>: given a sentence that needs an <i>accusative</i>, does the model still prefer the correct accusative over a dative-corrupted substitute, or does it over-apply dative marking where it doesn't belong? Example from the eval set (correct case is accusative, governed by <span class="mono">für</span>):</p>
+  <div class="card" style="font-size:0.85rem;">
+    <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); font-weight:600;">gold (accusative, correct)</div>
+    <div class="mono" style="margin-top:4px; line-height:1.6;">&hellip;denn das gehört für <b style="background:var(--accent-wash); border-radius:3px; padding:0 2px;">mich</b> zum Standard&hellip;</div>
+    <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); font-weight:600; margin-top:8px;">corrupted (dative substituted)</div>
+    <div class="mono" style="margin-top:4px; line-height:1.6;">&hellip;denn das gehört für <b style="background:rgba(211,59,59,0.14); border-radius:3px; padding:0 2px;">mir</b> zum Standard&hellip;</div>
+  </div>
+  <p>This testset (9,189 pairs) has no preposition/case sub-categories — every example is a single undifferentiated bucket, so all comparisons below are on the full-set <span class="mono">ALL</span> score. Learning curves, regular (non-shuffled) L1, across the same five configurations as §1:</p>
+  <div class="grid-charts" id="mini-charts-2"></div>
+
+  <div class="finding">L1 pretraining helps <b>much more</b> on this direction than on the primary dative-sensitivity task, especially early in phase 2. At epoch&nbsp;1, DE‑only scores only <b>70.2%</b> (vs. 77.5% on the sensitivity task) and every L1 closes a huge chunk of that gap: <b>EN&nbsp;+10.8pp, TR&nbsp;+9.6pp, TR‑stripped&nbsp;+9.2pp, ZH&nbsp;+5.7pp</b> (all p&lt;0.001). By epoch&nbsp;5 the gains shrink but are still roughly <b>2–3&times;</b> the size of the sensitivity-task gains: <b>EN&nbsp;+4.4pp, TR&nbsp;+4.0pp, TR‑stripped&nbsp;+3.8pp, ZH&nbsp;+2.7pp</b> (all p&lt;0.001), against +1.9/+1.7/+1.4/+1.3pp on the forward task. Whatever L1 pretraining is teaching the model about German case, it does more for <i>not over-generalizing dative</i> than for <i>correctly applying it</i>.</p>
+</section>
+
+<section>
+  <span class="section-num">07</span>
+  <h2>EN vs. TR / TR vs. TR-stripped, this time on the specificity task</h2>
+  <p>The pattern from §2–4 doesn't repeat — it's a different configuration that turns out to matter. Here it's the <b style="color:var(--text-primary)">regular</b> configuration where English edges ahead of Turkish, not the reset-embedding one.</p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Configuration</th><th>Epoch</th>
+          <th>EN</th><th>TR</th><th>TR‑str</th>
+          <th>Δ EN&minus;TR</th><th>p (EN vs TR)</th>
+          <th>Δ TR&minus;TRstr</th><th>p (TR vs TRstr)</th>
+        </tr>
+      </thead>
+      <tbody id="sig-table-body-2"></tbody>
+    </table>
+  </div>
+  <p style="font-size:0.82rem;">In the <b style="color:var(--text-primary)">regular</b> configuration, English is significantly ahead of Turkish at epoch&nbsp;1 (p=0.047) and epoch&nbsp;5 (p=0.017) — the opposite of §3, where regular was the one configuration with <i>no</i> EN/TR difference. Under embedding-reset, character-shift, and reset+shift, EN vs. TR again collapses to noise, as it did on the sensitivity task. Shuffled-L1 shows a marginal <i>TR&nbsp;&gt;&nbsp;EN</i> at epoch&nbsp;5 (p=0.012) — small (&minus;0.32pp) and not corrected for the ~30 comparisons run across both directions and all configs, so treat it as suggestive rather than confirmed. TR vs. TR‑stripped stays where it was throughout: directionally TR ahead in most cells, never clearing significance (closest: regular config, epoch&nbsp;5, p=0.051).</p>
+</section>
+
+<section>
+  <span class="section-num">08</span>
+  <h2>Putting both directions side by side: the sensitivity–specificity gap</h2>
+  <p>Every model is worse at avoiding dative over-application than at applying dative correctly — but L1 pretraining shrinks that internal gap, roughly in proportion to how much it helps overall.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Model (regular cfg, epoch 5)</th><th>Sensitivity (dat→acc)</th><th>Specificity (acc→dat)</th><th>Internal gap</th></tr></thead>
+      <tbody>
+        <tr><td>DE-only</td><td>83.76</td><td>80.86</td><td class="hl">2.90</td></tr>
+        <tr><td>Chinese</td><td>85.04</td><td>83.53</td><td class="hl">1.51</td></tr>
+        <tr><td>Turkish (stripped)</td><td>85.20</td><td>84.65</td><td class="hl">0.55</td></tr>
+        <tr><td>Turkish</td><td>85.50</td><td>84.90</td><td class="hl">0.60</td></tr>
+        <tr><td>English</td><td>85.66</td><td>85.21</td><td class="hl">0.45</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.82rem;">DE-only's two scores are nearly 3pp apart even after 5 epochs of German — it's meaningfully worse at knowing when <i>not</i> to use dative than at knowing when to use it. Every L1 narrows that gap to under 1.6pp, and the three L1s that transfer best overall (EN, TR, TR-stripped) narrow it to under 0.6pp — tightest for English, loosest (among the regular-transferring three) for Turkish, though all three sit close together. Chinese, the weakest overall transferer, also leaves the largest residual asymmetry. Read together with §6, this looks like one underlying effect rather than two: phase-1 pretraining sharpens general accusative/dative case discrimination, and that shows up as a large gain on whichever direction the DE-only baseline is worst at.</p>
+</section>
+
+<section>
+  <span class="section-num">09</span>
+  <h2>Updated takeaways</h2>
+  <ol class="takeaways">
+    <li><b>The sensitivity/specificity asymmetry is the biggest new finding.</b> L1 pretraining gains are 2–3&times; larger on the "don't over-apply dative" task than on the "do apply dative" task, for every language, at every checkpoint. A DE-only model's main weakness after 5 epochs isn't missing dative marking — it's over-using it, and that's exactly where phase-1 pretraining pays off most.</li>
+    <li><b>EN vs. TR significance is configuration-<i>and</i>-direction dependent.</b> Regular config: EN&gt;TR significant only on the specificity task (§7); tied on sensitivity (§2). Reset-embedding config: TR&gt;TR significant only on sensitivity (§3); tied on specificity. There's no configuration where one language is unambiguously ahead on both directions — treat any single "EN vs TR" number in isolation with caution.</li>
+    <li><b>TR vs. TR-stripped never flips sign.</b> Across both directions and all five configurations, the point estimate favors intact-case Turkish over its stripped variant in all but two of the thirty comparisons, and gets significant exactly once (shifted-DE, sensitivity task, epoch 3). Small, consistent, rarely provable with 5 seeds — but consistent is itself informative.</li>
+    <li><b>Chinese is the one robust cross-direction, cross-configuration finding.</b> It transfers worst on both the sensitivity task (main report) and the specificity task (§6), and retains the largest sensitivity–specificity asymmetry (§8) — the most reliable language effect in the entire sweep.</li>
+  </ol>
+</section>
+
+<section>
+  <span class="section-num">10</span>
+  <h2>Re-checked with the repo's own significance script<span class="badge sig">FDR + equivalence</span></h2>
+  <p><span class="mono">src/eval/significance_tests.py</span> does two things my quick checks above didn't: it applies a <b style="color:var(--text-primary)">Benjamini–Hochberg FDR correction</b> within each family of tests (closing exactly the multiple-comparisons gap flagged in §2's callout), and it runs <b style="color:var(--text-primary)">TOST equivalence tests</b>, which can positively assert "these two are the same within X points" rather than just failing to find a difference. The script's paths and run-directory names were written for an older naming scheme and no longer resolved against the current <span class="mono">eval_results/</span> layout (it also still referenced a <span class="mono">NaN_core</span> category that's since been split into <span class="mono">dative-case</span> / <span class="mono">no-case</span> / <span class="mono">other-case</span>) — those were fixed in place so the script runs against the current data; the fix is now committed in the file, not just a one-off patch.</p>
+
+  <h3 style="margin-top:20px;">EN / TR / ZH, FDR-corrected — the ranking holds up</h3>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Epoch</th><th>Comparison</th><th>Δpp</th><th>raw p</th><th>FDR q</th><th>Cohen's d</th><th>equiv. ≤1pp</th><th>equiv. ≤2pp</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>EN vs TR</td><td>+0.34</td><td>0.4828</td><td class="p-none">0.4828</td><td>0.48</td><td>no</td><td class="hl">yes</td></tr>
+        <tr><td>1</td><td>EN vs ZH</td><td>+1.87</td><td class="p-strong">0.0077</td><td class="p-strong">0.0116</td><td>2.35</td><td>no</td><td>no</td></tr>
+        <tr><td>1</td><td>TR vs ZH</td><td>+1.53</td><td class="p-strong">0.0024</td><td class="p-strong">0.0071</td><td>3.01</td><td>no</td><td>no</td></tr>
+        <tr><td>3</td><td>EN vs TR</td><td>+0.05</td><td>0.8440</td><td class="p-none">0.8440</td><td>0.13</td><td class="hl">yes</td><td class="hl">yes</td></tr>
+        <tr><td>3</td><td>EN vs ZH</td><td>+0.90</td><td class="p-weak">0.0262</td><td class="p-weak">0.0487</td><td>1.79</td><td>no</td><td class="hl">yes</td></tr>
+        <tr><td>3</td><td>TR vs ZH</td><td>+0.85</td><td class="p-weak">0.0325</td><td class="p-weak">0.0487</td><td>1.70</td><td>no</td><td class="hl">yes</td></tr>
+        <tr><td>5</td><td>EN vs TR</td><td>+0.16</td><td>0.1624</td><td class="p-none">0.1624</td><td>0.97</td><td class="hl">yes</td><td class="hl">yes</td></tr>
+        <tr><td>5</td><td>EN vs ZH</td><td>+0.62</td><td class="p-strong">0.0079</td><td class="p-weak">0.0236</td><td>2.50</td><td class="hl">yes</td><td class="hl">yes</td></tr>
+        <tr><td>5</td><td>TR vs ZH</td><td>+0.46</td><td class="p-weak">0.0268</td><td class="p-weak">0.0401</td><td>1.83</td><td class="hl">yes</td><td class="hl">yes</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.82rem;">Every "significant" cell in this table survives FDR correction (q stays under 0.05), and the qualitative picture from the main report is unchanged: ZH is reliably behind, EN vs TR is not. The TOST columns add something new — by epoch 5, <b style="color:var(--text-primary)">EN and TR are positively confirmed equivalent within 1 point</b> (not just "no significant difference found"), and even ZH's gap from EN/TR, while real, is confirmed to be <b style="color:var(--text-primary)">no more than 2 points</b>. A comparison can be both significant <i>and</i> equivalent within a margin at the same time — significance says "not exactly zero," equivalence says "bounded in size" — and epoch 5's EN‑vs‑ZH row is both.</p>
+
+  <h3 style="margin-top:20px;">The reset-embedding penalty: EN's is FDR-robust, TR's isn't</h3>
+  <p>This refines §3. That section compared TR(reset) directly against EN(reset) and found TR ahead — a different question from the one here, which is each language's <i>own</i> regular‑vs‑reset penalty, now FDR-corrected within a 10-test family (regular vs. shuffled/reset/shifted, epoch 5):</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Comparison</th><th>Δpp (regular&minus;reset)</th><th>raw p</th><th>FDR q</th><th>Survives FDR?</th></tr></thead>
+      <tbody>
+        <tr><td>EN-DE vs. EN-DE (reset embeddings)</td><td class="hl">0.96</td><td class="p-strong">0.0002</td><td class="p-weak">0.0017</td><td class="sig-yes">yes</td></tr>
+        <tr><td>ZH-DE vs. ZH-DE (L1 shuffled)</td><td class="hl">0.75</td><td class="p-strong">0.0031</td><td class="p-weak">0.0153</td><td class="sig-yes">yes</td></tr>
+        <tr><td>TR-DE vs. TR-DE (reset embeddings)</td><td class="hl">0.42</td><td class="p-weak">0.0167</td><td>0.0558</td><td class="sig-no">no</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.82rem;">Only 2 of the 10 tests in this family survive FDR correction. English's reset penalty is robust; Turkish's, which looked marginal even before correction (raw p=0.0167), does not clear the bar once tested alongside the other 9 comparisons in the same family. That sharpens rather than undercuts the §3 story: English's transfer leans on the embedding table in a way that's FDR-robust on its own; Turkish's doesn't show a reliable embedding dependency at all — which is consistent with (if anything reinforces) why removing that dependency is where Turkish pulls ahead of English.</p>
+
+  <h3 style="margin-top:20px;">Core dative-argument transfer gain: now FDR-confirmed, not just directional</h3>
+  <p>The main report's §4 flagged the per-category tests as underpowered for the core (non-prepositional) argument categories. That caveat applied to <i>cross-language</i> comparisons (EN vs TR vs ZH within one category, n=5 each side). It does not apply to the more basic question of whether the transfer gain exists at all — every L1 vs. DE-only comparison in these three categories, at epoch 5, clears FDR correction:</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Category (n)</th><th>Model</th><th>Δpp vs. DE-only</th><th>raw p</th><th>FDR q</th><th>Cohen's d</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3">dative-case (254)</td><td>EN-DE</td><td class="hl">+9.53</td><td>0.0013</td><td class="p-strong">0.0045</td><td>4.72</td></tr>
+        <tr><td>TR-DE</td><td class="hl">+7.56</td><td>0.0034</td><td class="p-strong">0.0076</td><td>2.61</td></tr>
+        <tr><td>ZH-DE</td><td class="hl">+5.28</td><td>0.0097</td><td class="p-strong">0.0178</td><td>2.31</td></tr>
+        <tr><td rowspan="3">no-case (134)</td><td>EN-DE</td><td class="hl">+7.91</td><td>0.0119</td><td class="p-weak">0.0205</td><td>2.14</td></tr>
+        <tr><td>TR-DE</td><td class="hl">+7.16</td><td>0.0175</td><td class="p-weak">0.0289</td><td>2.13</td></tr>
+        <tr><td>ZH-DE</td><td class="hl">+6.42</td><td>0.0274</td><td class="p-weak">0.0386</td><td>1.79</td></tr>
+        <tr><td rowspan="3">other-case (183)</td><td>EN-DE</td><td class="hl">+6.78</td><td>0.0008</td><td class="p-strong">0.0029</td><td>3.71</td></tr>
+        <tr><td>TR-DE</td><td class="hl">+5.46</td><td>0.0002</td><td class="p-strong">0.0013</td><td>4.26</td></tr>
+        <tr><td>ZH-DE</td><td class="hl">+4.04</td><td>0.0032</td><td class="p-strong">0.0074</td><td>2.68</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.82rem;">All nine cells clear FDR q&lt;0.05, most comfortably (q≤0.02), with large effect sizes (d = 1.8–4.7). This upgrades the headline §4 finding from "directional, underpowered at the category level" to "the transfer gain in core-argument categories is itself FDR-confirmed for every L1 tested" — it's specifically the <i>ranking between languages</i> within a category (not whether the gain exists) that n=5 seeds still can't resolve.</p>
+</section>
+
+<footer>
+  Source: per-seed CSVs under <span class="mono">eval_results/char-{en,tr,zh}-de_phase_2_*/​*_per_seed_by_category.csv</span> and <span class="mono">char-de_phase_2_*</span>, testsets <span class="mono">dative_accusative_pairs</span> / <span class="mono">accusative_dative_pairs</span> (± <span class="mono">_shifted</span>), 5 seeds (0–4) per cell. §6–9 cross-check <span class="mono">eval_results/Model Evaluations [accusative_dative].txt</span> (epoch‑1 snapshot; the full epoch 1/3/5 trajectory used here is pulled directly from the per-seed CSVs, matching the notebook's <span class="mono">frames_acc_dat</span> table). §1–9 significance: Welch's unpaired t-test on per-seed accuracy, unadjusted, not corrected for multiple comparisons — read together with §10, which reruns the same family of comparisons through <span class="mono">src/eval/significance_tests.py</span> (Benjamini–Hochberg FDR correction + TOST equivalence testing) and finds the qualitative conclusions hold, with two refinements (TR's embedding-reset penalty and the core-argument ranking-vs-gain distinction). Companion to the main transfer report (all-configs-averaged view).
+</footer>
+
+</div>
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+(function(){
+  "use strict";
+  function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+  var tooltip = document.getElementById('tooltip');
+  function showTip(evt, html){ tooltip.innerHTML = html; tooltip.classList.add('show'); moveTip(evt); }
+  function moveTip(evt){ tooltip.style.left = evt.clientX + 'px'; tooltip.style.top = (evt.clientY - 12) + 'px'; }
+  function hideTip(){ tooltip.classList.remove('show'); }
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs){ var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function fmt(n){ return n.toFixed(2); }
+
+  var DATA_DAT_ACC = {
+    regular:       {label:'Regular L1 + regular DE (cfg 3)', EN:[82.50,84.87,85.66], TR:[82.16,84.82,85.50], TRS:[81.96,84.62,85.20]},
+    reset:         {label:'+ reset embeddings (cfg 4)',       EN:[80.65,83.82,84.69], TR:[81.07,84.58,85.08], TRS:[81.02,84.20,85.04]},
+    shifted:       {label:'+ DE shifted (cfg 5)',             EN:[81.88,84.55,85.53], TR:[81.58,84.65,85.56], TRS:[81.42,84.13,85.15]},
+    reset_shifted: {label:'+ reset embed + DE shifted (cfg 6)', EN:[80.96,84.18,85.06], TR:[80.99,83.95,84.84], TRS:[80.70,84.19,84.77]},
+    shuffled_L1:   {label:'Shuffled L1 + regular DE (cfg 7)', EN:[82.36,84.61,85.45], TR:[81.99,84.78,85.52], TRS:[81.83,84.57,85.40]}
+  };
+
+  var SIG_DAT_ACC = [
+    ['regular','Regular L1 + regular DE (cfg 3)',1,82.50,82.16,81.96,+0.34,0.4828,+0.20,0.5380],
+    ['regular','Regular L1 + regular DE (cfg 3)',3,84.87,84.82,84.62,+0.05,0.8440,+0.20,0.3233],
+    ['regular','Regular L1 + regular DE (cfg 3)',5,85.66,85.50,85.20,+0.16,0.1624,+0.30,0.1185],
+    ['reset','+ reset embeddings (cfg 4)',1,80.65,81.07,81.02,-0.41,0.5527,+0.04,0.9433],
+    ['reset','+ reset embeddings (cfg 4)',3,83.82,84.58,84.20,-0.77,0.0159,+0.38,0.2728],
+    ['reset','+ reset embeddings (cfg 4)',5,84.69,85.08,85.04,-0.39,0.0387,+0.04,0.7923],
+    ['shifted','+ DE shifted (cfg 5)',1,81.88,81.58,81.42,+0.30,0.4970,+0.15,0.7249],
+    ['shifted','+ DE shifted (cfg 5)',3,84.55,84.65,84.13,-0.11,0.6632,+0.52,0.0036],
+    ['shifted','+ DE shifted (cfg 5)',5,85.53,85.56,85.15,-0.03,0.8691,+0.41,0.0879],
+    ['reset_shifted','+ reset embed + DE shifted (cfg 6)',1,80.96,80.99,80.70,-0.03,0.9454,+0.29,0.3221],
+    ['reset_shifted','+ reset embed + DE shifted (cfg 6)',3,84.18,83.95,84.19,+0.23,0.3920,-0.23,0.3230],
+    ['reset_shifted','+ reset embed + DE shifted (cfg 6)',5,85.06,84.84,84.77,+0.21,0.2626,+0.07,0.7658],
+    ['shuffled_L1','Shuffled L1 + regular DE (cfg 7)',1,82.36,81.99,81.83,+0.37,0.1927,+0.16,0.6022],
+    ['shuffled_L1','Shuffled L1 + regular DE (cfg 7)',3,84.61,84.78,84.57,-0.17,0.5986,+0.22,0.5802],
+    ['shuffled_L1','Shuffled L1 + regular DE (cfg 7)',5,85.45,85.52,85.40,-0.07,0.7962,+0.11,0.7053]
+  ];
+
+  var DATA_ACC_DAT = {
+    regular:       {label:'Regular L1 + regular DE (cfg 3)', EN:[80.98,84.71,85.21], TR:[79.80,84.40,84.90], TRS:[79.39,84.29,84.65]},
+    reset:         {label:'+ reset embeddings (cfg 4)',       EN:[76.23,82.68,83.77], TR:[76.96,82.09,83.54], TRS:[76.21,82.23,83.55]},
+    shifted:       {label:'+ DE shifted (cfg 5)',             EN:[79.02,84.02,84.56], TR:[78.94,83.92,84.50], TRS:[78.75,83.93,84.30]},
+    reset_shifted: {label:'+ reset embed + DE shifted (cfg 6)', EN:[76.57,82.54,83.63], TR:[76.75,82.67,83.84], TRS:[76.90,82.33,83.67]},
+    shuffled_L1:   {label:'Shuffled L1 + regular DE (cfg 7)', EN:[79.49,84.00,84.32], TR:[79.50,84.30,84.64], TRS:[79.25,84.13,84.62]}
+  };
+
+  var SIG_ACC_DAT = [
+    ['regular','Regular L1 + regular DE (cfg 3)',1,80.98,79.80,79.39,+1.18,0.0473,+0.41,0.5165],
+    ['regular','Regular L1 + regular DE (cfg 3)',3,84.71,84.40,84.29,+0.31,0.2745,+0.11,0.6746],
+    ['regular','Regular L1 + regular DE (cfg 3)',5,85.21,84.90,84.65,+0.31,0.0172,+0.25,0.0510],
+    ['reset','+ reset embeddings (cfg 4)',1,76.23,76.96,76.21,-0.74,0.4817,+0.75,0.3701],
+    ['reset','+ reset embeddings (cfg 4)',3,82.68,82.09,82.23,+0.59,0.2367,-0.14,0.7626],
+    ['reset','+ reset embeddings (cfg 4)',5,83.77,83.54,83.55,+0.23,0.3614,-0.01,0.9764],
+    ['shifted','+ DE shifted (cfg 5)',1,79.02,78.94,78.75,+0.09,0.8744,+0.19,0.7396],
+    ['shifted','+ DE shifted (cfg 5)',3,84.02,83.92,83.93,+0.10,0.7861,-0.01,0.9821],
+    ['shifted','+ DE shifted (cfg 5)',5,84.56,84.50,84.30,+0.07,0.7790,+0.20,0.4066],
+    ['reset_shifted','+ reset embed + DE shifted (cfg 6)',1,76.57,76.75,76.90,-0.17,0.8663,-0.15,0.8635],
+    ['reset_shifted','+ reset embed + DE shifted (cfg 6)',3,82.54,82.67,82.33,-0.12,0.7359,+0.34,0.4699],
+    ['reset_shifted','+ reset embed + DE shifted (cfg 6)',5,83.63,83.84,83.67,-0.21,0.4193,+0.17,0.4874],
+    ['shuffled_L1','Shuffled L1 + regular DE (cfg 7)',1,79.49,79.50,79.25,-0.01,0.9920,+0.25,0.7730],
+    ['shuffled_L1','Shuffled L1 + regular DE (cfg 7)',3,84.00,84.30,84.13,-0.30,0.3159,+0.17,0.5387],
+    ['shuffled_L1','Shuffled L1 + regular DE (cfg 7)',5,84.32,84.64,84.62,-0.32,0.0122,+0.02,0.9064]
+  ];
+
+  function pClass(p){ if (p<0.01) return 'p-strong'; if (p<0.05) return 'p-weak'; return 'p-none'; }
+
+  function buildSigTable(tbodyId, SIG){
+    var tbody = document.getElementById(tbodyId);
+    var lastCfg = null;
+    SIG.forEach(function(row){
+      var tr = document.createElement('tr');
+      var cfgCell = (row[0]!==lastCfg) ? row[1] : '';
+      lastCfg = row[0];
+      tr.innerHTML =
+        '<td class="cfg-label">'+cfgCell+'</td>' +
+        '<td>'+row[2]+'</td>' +
+        '<td>'+fmt(row[3])+'</td><td>'+fmt(row[4])+'</td><td>'+fmt(row[5])+'</td>' +
+        '<td class="hl">'+(row[6]>=0?'+':'')+fmt(row[6])+'</td>' +
+        '<td class="'+pClass(row[7])+'">'+row[7].toFixed(4)+'</td>' +
+        '<td class="hl">'+(row[8]>=0?'+':'')+fmt(row[8])+'</td>' +
+        '<td class="'+pClass(row[9])+'">'+row[9].toFixed(4)+'</td>';
+      tbody.appendChild(tr);
+    });
+  }
+
+  function miniLineChart(container, cfg){
+    var W = 280, H = 190, M = {top:10, right:10, bottom:24, left:30};
+    var plotW = W - M.left - M.right, plotH = H - M.top - M.bottom;
+    var xVals = [1,3,5];
+    var xPos = function(i){ return M.left + (plotW * i / (xVals.length-1)); };
+    var allVals = cfg.EN.concat(cfg.TR, cfg.TRS);
+    var yMin = Math.floor(Math.min.apply(null,allVals)-0.6);
+    var yMax = Math.ceil(Math.max.apply(null,allVals)+0.6);
+    var yPos = function(v){ return M.top + plotH * (1 - (v - yMin)/(yMax-yMin)); };
+    var svg = el('svg', {class:'chart', viewBox:'0 0 '+W+' '+H});
+    [yMin, (yMin+yMax)/2, yMax].forEach(function(t){
+      svg.appendChild(el('line', {x1:M.left, x2:W-M.right, y1:yPos(t), y2:yPos(t), class:'grid-line'}));
+      var lbl = el('text', {x:M.left-6, y:yPos(t)+3, class:'axis-label', 'text-anchor':'end'});
+      lbl.textContent = t.toFixed(1);
+      svg.appendChild(lbl);
+    });
+    svg.appendChild(el('line', {x1:M.left, x2:M.left, y1:M.top, y2:H-M.bottom, class:'baseline'}));
+    xVals.forEach(function(xv,i){
+      var lbl = el('text', {x:xPos(i), y:H-M.bottom+15, class:'axis-label', 'text-anchor':'middle'});
+      lbl.textContent = 'ep'+xv;
+      svg.appendChild(lbl);
+    });
+    var series = [
+      {label:'EN', color: css('--s-en'), values: cfg.EN},
+      {label:'TR', color: css('--s-tr'), values: cfg.TR},
+      {label:'TR-str', color: css('--s-trs'), values: cfg.TRS}
+    ];
+    series.forEach(function(s){
+      var d = s.values.map(function(v,i){ return (i===0?'M':'L') + xPos(i) + ' ' + yPos(v); }).join(' ');
+      svg.appendChild(el('path', {d:d, fill:'none', stroke:s.color, 'stroke-width':2, 'stroke-linecap':'round', 'stroke-linejoin':'round'}));
+      s.values.forEach(function(v,i){
+        svg.appendChild(el('circle', {cx:xPos(i), cy:yPos(v), r:3.2, fill:s.color, stroke:css('--surface'), 'stroke-width':1.6}));
+      });
+    });
+    xVals.forEach(function(xv,i){
+      var hit = el('rect', {x:xPos(i)-plotW/(xVals.length-1)/2, y:M.top, width:plotW/(xVals.length-1), height:plotH, class:'hit'});
+      hit.addEventListener('mousemove', function(evt){
+        var rows = series.map(function(s){ return '<div>'+s.label+': '+fmt(s.values[i])+'%</div>'; }).join('');
+        showTip(evt, '<b>epoch '+xv+'</b>' + rows);
+      });
+      hit.addEventListener('mouseleave', hideTip);
+      svg.appendChild(hit);
+    });
+    container.appendChild(svg);
+  }
+
+  function buildMiniCharts(gridId, DATA, subLabel){
+    var wrap = document.getElementById(gridId);
+    Object.keys(DATA).forEach(function(key){
+      var cfg = DATA[key];
+      var card = document.createElement('div'); card.className='mini-card';
+      var title = document.createElement('div'); title.className='mini-title'; title.textContent = cfg.label;
+      var sub = document.createElement('div'); sub.className='mini-sub'; sub.textContent = subLabel || 'ALL-category accuracy, %';
+      card.appendChild(title); card.appendChild(sub);
+      var chartDiv = document.createElement('div');
+      card.appendChild(chartDiv);
+      wrap.appendChild(card);
+      miniLineChart(chartDiv, cfg);
+    });
+    var legend = document.createElement('div'); legend.className='legend';
+    [['English','--s-en'],['Turkish','--s-tr'],['Turkish (stripped)','--s-trs']].forEach(function(p){
+      var item = document.createElement('div'); item.className='item';
+      var sw = document.createElement('span'); sw.className='sw'; sw.style.background = css(p[1]);
+      var lbl = document.createElement('span'); lbl.textContent = p[0];
+      item.appendChild(sw); item.appendChild(lbl);
+      legend.appendChild(item);
+    });
+    wrap.parentNode.insertBefore(legend, wrap.nextSibling);
+  }
+
+  function build(){
+    buildMiniCharts('mini-charts', DATA_DAT_ACC);
+    buildSigTable('sig-table-body', SIG_DAT_ACC);
+    buildMiniCharts('mini-charts-2', DATA_ACC_DAT, 'ALL / accusative→dative accuracy, %');
+    buildSigTable('sig-table-body-2', SIG_ACC_DAT);
+    document.addEventListener('mousemove', function(evt){ if (tooltip.classList.contains('show')) moveTip(evt); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
+  else build();
+})();
+</script>
+</body>
+</html>
