@@ -36,24 +36,33 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-RESULTS_ROOT = os.path.expanduser("~/Morphological/results")
+RESULTS_ROOT = os.path.expanduser(
+    os.environ.get(
+        "MORPH_RESULTS_ROOT",
+        "~/Morphological/results",
+    )
+)
+if not os.path.isdir(RESULTS_ROOT):
+    _fallback = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "eval_results")
+    if os.path.isdir(_fallback):
+        RESULTS_ROOT = _fallback
 
 # PDF row labels -> (csv_dir, epoch_in_csv). Epoch 0 for L1 models is phase-1 ep5.
 MODEL_SPECS: List[Tuple[str, str, Optional[int]]] = [
-    ("DE only", "char-de_phase_2_regular", None),
-    ("EN-DE", "char-en-de_phase_2_regular_regular_de", None),
-    ("TR-DE", "char-tr-de_phase_2_regular_regular_de", None),
-    ("ZH-DE", "char-zh-de_phase_2_regular_regular_de", None),
-    ("EN-DE (L1 shuffled)", "char-en-de_phase_2_shuffled_regular_de", None),
-    ("TR-DE (L1 shuffled)", "char-tr-de_phase_2_shuffled_regular_de", None),
-    ("ZH-DE (L1 shuffled)", "char-zh-de_phase_2_shuffled_regular_de", None),
-    ("EN-DE (reset embeddings)", "char-en-de_phase_2_regular_reset_embeddings", None),
-    ("TR-DE (reset embeddings)", "char-tr-de_phase_2_regular_reset_embeddings", None),
-    ("ZH-DE (reset embeddings)", "char-zh-de_phase_2_regular_reset_embeddings", None),
-    ("DE only (shifted DE)", "char-de_phase_2_shifted", None),
-    ("EN-DE (shifted DE)", "char-en-de_phase_2_regular_shifted_de", None),
-    ("TR-DE (shifted DE)", "char-tr-de_phase_2_regular_shifted_de", None),
-    ("ZH-DE (shifted DE)", "char-zh-de_phase_2_regular_shifted_de", None),
+    ("DE only", "char-de_phase_2_de_nllb_regular", None),
+    ("EN-DE", "char-en-de_phase_2_regular_de_nllb_regular", None),
+    ("TR-DE", "char-tr-de_phase_2_regular_de_nllb_regular", None),
+    ("ZH-DE", "char-zh-de_phase_2_regular_de_nllb_regular", None),
+    ("EN-DE (L1 shuffled)", "char-en-de_phase_2_shuffled_de_nllb_regular", None),
+    ("TR-DE (L1 shuffled)", "char-tr-de_phase_2_shuffled_de_nllb_regular", None),
+    ("ZH-DE (L1 shuffled)", "char-zh-de_phase_2_shuffled_de_nllb_regular", None),
+    ("EN-DE (reset embeddings)", "char-en-de_phase_2_regular_de_nllb_reset_embeddings", None),
+    ("TR-DE (reset embeddings)", "char-tr-de_phase_2_regular_de_nllb_reset_embeddings", None),
+    ("ZH-DE (reset embeddings)", "char-zh-de_phase_2_regular_de_nllb_reset_embeddings", None),
+    ("DE only (shifted DE)", "char-de_phase_2_de_nllb_shifted", None),
+    ("EN-DE (shifted DE)", "char-en-de_phase_2_regular_de_nllb_shifted", None),
+    ("TR-DE (shifted DE)", "char-tr-de_phase_2_regular_de_nllb_shifted", None),
+    ("ZH-DE (shifted DE)", "char-zh-de_phase_2_regular_de_nllb_shifted", None),
 ]
 
 PHASE1_EPOCH0: Dict[str, str] = {
@@ -71,8 +80,10 @@ CATEGORIES = [
     "Instrumental_TR",
     "Locative_TR",
     "Mixed_TR",
-    "NaN_core",
     "NaN_prep",
+    "dative-case",
+    "no-case",
+    "other-case",
 ]
 
 # Planned contrasts (not all pairwise) — these are the scientific questions.
@@ -252,7 +263,7 @@ def collect_cells() -> Dict[Tuple[str, int, str], np.ndarray]:
 
 
 def n_examples_map() -> Dict[str, int]:
-    df = load_run("char-de_phase_2_regular")
+    df = load_run("char-de_phase_2_de_nllb_regular")
     assert df is not None
     out = {}
     for cat in CATEGORIES:
@@ -585,29 +596,31 @@ def main() -> None:
                         f"Δ={r['delta_pp']:+6.1f}pp  p={fmt_p(r['p'])}  q={fmt_p(r.get('q_fdr', np.nan))}"
                     )
 
-    # Highlight NaN_core vs DE-only (the visually large transfer gap)
+    # Highlight the core (non-prepositional) dative-argument categories vs DE-only.
     print("\n" + "=" * 88)
-    print("Notable: NaN_core (n=567) is where L1 transfer shows up most")
+    print(f"Notable: core dative-argument categories (n={n_ex['dative-case']}/{n_ex['no-case']}/{n_ex['other-case']}) are where L1 transfer shows up most")
     print("=" * 88)
-    for epoch in [1, 3, 5]:
-        print(f"\n  epoch {epoch}")
-        for other in L1_REGULAR:
-            r = next(
-                (
-                    x
-                    for x in planned_rows
-                    if x["epoch"] == epoch
-                    and x["category"] == "NaN_core"
-                    and x["model_a"] == other
-                    and x["family"] == "vs_DE_only"
-                ),
-                None,
-            )
-            if r:
-                print(
-                    f"    {other:<8} {r['mean_a']*100:5.2f}% vs DE {r['mean_b']*100:5.2f}%  "
-                    f"Δ={r['delta_pp']:+5.2f}pp  p={fmt_p(r['p'])}  d={r['cohens_d']:.2f}"
+    for core_cat in ["dative-case", "no-case", "other-case"]:
+        print(f"\n -- category: {core_cat} --")
+        for epoch in [1, 3, 5]:
+            print(f"\n  epoch {epoch}")
+            for other in L1_REGULAR:
+                r = next(
+                    (
+                        x
+                        for x in planned_rows
+                        if x["epoch"] == epoch
+                        and x["category"] == core_cat
+                        and x["model_a"] == other
+                        and x["family"] == "vs_DE_only"
+                    ),
+                    None,
                 )
+                if r:
+                    print(
+                        f"    {other:<8} {r['mean_a']*100:5.2f}% vs DE {r['mean_b']*100:5.2f}%  "
+                        f"Δ={r['delta_pp']:+5.2f}pp  p={fmt_p(r['p'])}  d={r['cohens_d']:.2f}"
+                    )
 
     os.makedirs(os.path.dirname(args.out_json) or ".", exist_ok=True)
     payload = {
