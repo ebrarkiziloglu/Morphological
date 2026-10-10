@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --partition preempt
 #SBATCH --gres gpu:1
-#SBATCH --output eval/logs/%j_eval_multiseed_char-tr-de_stripped_phase2_shifted.out
+#SBATCH --output eval/logs/%j_eval_multiseed_char-tr-de_stripped_phase2_regular.out
 #SBATCH --time 24:00:00
 
 source ~/.bashrc
@@ -9,13 +9,13 @@ conda activate morph2
 
 ROOT="/hnvme/workspace/b279bb15-morph/Morphological"
 cd "${ROOT}"
-DATIVE_JSON="${ROOT}/src/eval_dataset/dative_accusative_pairs_shifted.json"
-ACCUSATIVE_JSON="${ROOT}/src/eval_dataset/accusative_dative_pairs_shifted.json"
+DATIVE_JSON="${ROOT}/src/eval_dataset/dative_accusative_pairs.json"
+ACCUSATIVE_JSON="${ROOT}/src/eval_dataset/accusative_dative_pairs.json"
 JSON_PATHS="${DATIVE_JSON},${ACCUSATIVE_JSON}"
 OUT_ROOT="${ROOT}/eval_results"
 SEEDS="0,1,2,3,4"
 EPOCHS="1,3,5"
-PHASE_SUBDIR="phase_2/stripped/regular/de_nllb/shifted"
+PHASE_SUBDIR="phase_2/stripped/regular/de_nllb/reset_embeddings"
 RUN_NAME="char-tr-de_${PHASE_SUBDIR//\//_}"
 
 mkdir -p "${OUT_ROOT}"
@@ -39,5 +39,6 @@ python3 ${ROOT}/src/eval/evaluate_ppl.py \
     --out_dir "${OUT_ROOT}/${RUN_NAME}" \
     --bootstrap_n 0
 
+echo "Finished multi-seed PPL evaluation at $(date)"
 echo "Aggregate CSVs (seed averages):"
 echo "  ${OUT_ROOT}/${RUN_NAME}/"
