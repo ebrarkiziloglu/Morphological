@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --partition h100
 #SBATCH --gres gpu:1
-#SBATCH --output logs/%j_tr_stripped_phase1_regular_or_shuffled_seeds_0.out
+#SBATCH --output logs/%j_tr_stripped_nominal_infl_phase1_shuffled_seeds_all.out
 #SBATCH --time 24:00:00
-SEEDS=(0)
+SEEDS=(0 1 2 3 4)
 
 # Multi-seed two-phase pretraining
 # --------------------------------
@@ -29,12 +29,16 @@ TOKENIZER="${ROOT}/src/tokenizer/tokenizer_char/"
 # ---------------------------------------------------------------------------
 
 # REGULAR:
-TR_P1="${ROOT}/data/NLLB_10M_subset/NLLB_10M_stripped.tr"
-TR_OUT="${ROOT}/models/v3/char-tr-de/phase_1/stripped/regular/"
+# TR_P1="${ROOT}/data/NLLB_10M_subset/NLLB_10M_stripped_nominal_infl.tr"
+# TR_OUT="${ROOT}/models/v3/char-tr-de/phase_1/stripped_nominal_infl/regular/"
+
+# TR_P1="${ROOT}/data/NLLB_10M_subset/NLLB_10M_stripped.tr"
+# TR_OUT="${ROOT}/models/v3/char-tr-de/phase_1/stripped/regular/"
+
 
 # SHUFFLED:
-# TR_P1="${ROOT}/data/NLLB_10M_subset_shuffled/NLLB_10M_stripped_shuffled_geometric_r0.3.tr"
-# TR_OUT="${ROOT}/models/v3/char-tr-de/phase_1/stripped/shuffled/"
+TR_P1="${ROOT}/data/NLLB_10M_subset_shuffled/NLLB_10M_stripped_nominal_infl_shuffled_geometric_r0.3.tr"
+TR_OUT="${ROOT}/models/v3/char-tr-de/phase_1/stripped_nominal_infl/shuffled/"
 
 for SEED in "${SEEDS[@]}"; do
     echo "=== Phase 1 Turkish | seed=${SEED} | $(date) ==="

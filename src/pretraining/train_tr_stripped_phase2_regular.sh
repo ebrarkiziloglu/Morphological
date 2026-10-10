@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --partition h100
 #SBATCH --gres gpu:1
-#SBATCH --output logs/%j_tr_stripped_shuffled_phase2_de_nllb_regular_train_eval_all_seeds.out
+#SBATCH --output logs/%j_tr_stripped_nominal_infl_phase2_de_nllb_train_eval_all_seeds_shuffled.out
 #SBATCH --time 24:00:00
 SEEDS=(0 1 2 3 4)
 
@@ -32,17 +32,17 @@ PHASE2_DATA="${ROOT}/data/NLLB_10M_subset/NLLB_10M.de"
 TR_OUT="${ROOT}/models/v3/char-tr-de"
 
 # From REGULAR Phase 1:
-# TR_OUT_PHASE2="${TR_OUT}/phase_2/stripped/regular/de_nllb/regular"
+# TR_OUT_PHASE2="${TR_OUT}/phase_2/stripped_nominal_infl/regular/de_nllb/regular"
 
 # From SHUFFLED Phase 1:
-TR_OUT_PHASE2="${TR_OUT}/phase_2/stripped/shuffled/de_nllb/regular"
+TR_OUT_PHASE2="${TR_OUT}/phase_2/stripped_nominal_infl/shuffled/de_nllb/regular"
 
 # ---------------------------------------------------------------------------
 # Phase 2 — German from TR Phase-1 epoch 5 (same seed)
 # ---------------------------------------------------------------------------
 for SEED in "${SEEDS[@]}"; do
-    # CKPT="${TR_OUT}/phase_1/stripped/regular/ep5/seed_${SEED}/"
-    CKPT="${TR_OUT}/phase_1/stripped/shuffled/ep5/seed_${SEED}/"
+    # CKPT="${TR_OUT}/phase_1/stripped_nominal_infl/regular/ep5/seed_${SEED}/"
+    CKPT="${TR_OUT}/phase_1/stripped_nominal_infl/shuffled/ep5/seed_${SEED}/"
     echo "=== Phase 2 DE from TR ep5 | seed=${SEED} | ckpt=${CKPT} | $(date) ==="
     python3 pretraining/train.py \
         --resume_from "${CKPT}" \
@@ -72,7 +72,7 @@ JSON_PATHS="${DATIVE_JSON},${ACCUSATIVE_JSON}"
 OUT_ROOT="${ROOT}/eval_results"
 SEEDS="0,1,2,3,4"
 EPOCHS="1,3,5"
-PHASE_SUBDIR="phase_2/stripped/shuffled/de_nllb/regular"
+PHASE_SUBDIR="phase_2/stripped_nominal_infl/shuffled/de_nllb/regular"
 RUN_NAME="char-tr-de_${PHASE_SUBDIR//\//_}"
 
 mkdir -p "${OUT_ROOT}"
