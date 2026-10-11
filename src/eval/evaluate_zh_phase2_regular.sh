@@ -9,8 +9,8 @@ conda activate morph2
 
 ROOT="/hnvme/workspace/b279bb15-morph/Morphological"
 cd "${ROOT}"
-DATIVE_JSON="${ROOT}/src/eval_dataset/dative_accusative_pairs.json"
-ACCUSATIVE_JSON="${ROOT}/src/eval_dataset/accusative_dative_pairs.json"
+DATIVE_JSON="${ROOT}/src/eval_dataset/testset/dative_accusative_pairs.json"
+ACCUSATIVE_JSON="${ROOT}/src/eval_dataset/testset/accusative_dative_pairs.json"
 JSON_PATHS="${DATIVE_JSON},${ACCUSATIVE_JSON}"
 OUT_ROOT="${ROOT}/eval_results"
 SEEDS="0,1,2,3,4"
