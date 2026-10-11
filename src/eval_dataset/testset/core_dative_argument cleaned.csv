@@ -1,0 +1,572 @@
+split;sent_id;group_start;group_end;group_span_text;final_category
+train;train-s1;12;12;mir;other-case
+train;train-s10001;15;16;seinem Sanatorium;dative-case
+train;train-s10042;14;15;den Besuchern;dative-case
+train;train-s10042;5;6;der Aufstellung;dative-case
+train;train-s10128;13;18;der jungen amerikanischen Fotografin Lee Miller;other-case
+train;train-s10138;7;7;ihr;dative-case
+train;train-s10162;3;3;ihr;dative-case
+train;train-s10239;4;5;der EU;dative-case
+train;train-s10258;13;18;dem weiteren Aufbau der Jugendorganisation FDJ;dative-case
+train;train-s1028;3;3;mir;dative-case
+train;train-s1031;7;8;den Leuten;dative-case
+train;train-s1035;3;3;mir;no-case
+train;train-s10352;2;6;der Verbandsgemeinde Braubach - Loreley;dative-case
+train;train-s104;7;9;den älteren Patienten;dative-case
+train;train-s10444;22;23;ihren Kindern;dative-case
+train;train-s1045;1;1;mir;no-case
+train;train-s10455;26;27;dem Schwerpunkt;other-case
+train;train-s1053;3;3;jedem;dative-case
+train;train-s10541;0;0;Ihm;no-case
+train;train-s10544;11;13;dem vorhandenen Bauwerk;other-case
+train;train-s10554;25;25;ihr;dative-case
+train;train-s1056;8;8;ihr;no-case
+train;train-s10576;13;13;der;other-case
+train;train-s1060;2;2;jedem;dative-case
+train;train-s1062;9;9;einem;no-case
+train;train-s10636;0;7;Dem Bau eines Ruhr - Tunnels (B;other-case
+train;train-s10644;2;4;der Verbandsgemeinde Herrstein;dative-case
+train;train-s10653;4;4;ihr;no-case
+train;train-s10707;6;7;der Strafverfolgung;other-case
+train;train-s10734;0;1;Der Bank;other-case
+train;train-s1076;3;5;dem gesamten Team;dative-case
+train;train-s10775;11;13;dem europäischen Festland;dative-case
+train;train-s10827;20;24;dem Botschafter des französischen Königs;dative-case
+train;train-s10827;9;9;dem;other-case
+train;train-s10832;6;7;der Öffentlichkeit;dative-case
+train;train-s10854;10;10;ihm;dative-case
+train;train-s10855;0;0;Ihm;no-case
+train;train-s10919;8;10;einer weiteren Behandlung;other-case
+train;train-s10997;12;12;der;no-case
+train;train-s11006;4;5;den USA;other-case
+train;train-s1102;8;8;mir;dative-case
+train;train-s11039;2;2;ihm;dative-case
+train;train-s11039;8;8;ihm;dative-case
+train;train-s1105;0;0;Mir;no-case
+train;train-s11078;3;4;dem Unternehmen;dative-case
+train;train-s11114;35;36;der Stadt;other-case
+train;train-s11153;2;2;Bürgern;dative-case
+train;train-s11158;0;3;Den Anweisungen des Scheichs;other-case
+train;train-s11173;19;20;den Rechtswissenschaften;dative-case
+train;train-s11186;29;30;dem See;other-case
+train;train-s11190;9;10;dem Brand;dative-case
+train;train-s11249;4;6;dem Spiel Shadowrun;dative-case
+train;train-s11254;0;0;Dieser;no-case
+train;train-s11257;5;6;der Fabrik;other-case
+train;train-s11272;0;2;Dem deutschen Publikum;dative-case
+train;train-s11295;4;7;den Benutzern des RMS;dative-case
+train;train-s11298;22;22;ihm;no-case
+train;train-s1133;5;5;jedem;dative-case
+train;train-s11345;14;17;jedem Einwohner eines Dorfes;dative-case
+train;train-s1145;2;2;mir;no-case
+train;train-s11452;4;4;ihm;other-case
+train;train-s1150;7;7;mir;no-case
+train;train-s11532;6;7;der Aufarbeitung;dative-case
+train;train-s11542;5;5;ihr;dative-case
+train;train-s11553;4;5;dem Zweitligisten;other-case
+train;train-s11611;3;3;ihm;no-case
+train;train-s11644;5;6;dem Werk;other-case
+train;train-s11653;12;12;ihm;no-case
+train;train-s11677;10;10;dem;other-case
+train;train-s11770;2;8;der New York County Lawyers 'Association;dative-case
+train;train-s11797;7;10;den US - Amerikanern;dative-case
+train;train-s11813;5;10;der Verehrung der Kaiser dieser Dynastie;dative-case
+train;train-s11815;6;7;diesem Gremium;dative-case
+train;train-s11821;0;5;Die den Wohngebäuden nahe liegenden Wirtschaftsgebäude;other-case
+train;train-s11825;20;26;dem niederländischer Fotografen portugiesischer Abstammung Fernando Pereira;other-case
+train;train-s11832;2;2;ihm;dative-case
+train;train-s11856;6;6;ihm;no-case
+train;train-s11869;20;20;ihm;no-case
+train;train-s11874;8;9;den Kindern;dative-case
+train;train-s11992;27;27;ihm;dative-case
+train;train-s12;3;3;mir;no-case
+train;train-s12031;18;19;der Öffentlichkeit;dative-case
+train;train-s12038;8;9;der Korruption;other-case
+train;train-s1206;15;15;denen;no-case
+train;train-s1208;4;4;mir;dative-case
+train;train-s1209;10;10;mir;no-case
+train;train-s12094;18;22;der territorialen Integrität des Reiches;dative-case
+train;train-s12110;0;1;Dieser Behauptung;other-case
+train;train-s12113;10;11;der Renovierung;dative-case
+train;train-s12113;6;7;internationalen Standards;dative-case
+train;train-s1215;12;12;mir;no-case
+train;train-s12268;5;5;ihm;no-case
+train;train-s12284;3;4;der Anstellung;dative-case
+train;train-s12306;12;12;ihm;no-case
+train;train-s12355;3;3;ihm;no-case
+train;train-s12365;2;2;ihm;dative-case
+train;train-s1239;12;12;ihm;other-case
+train;train-s12432;16;16;dem;no-case
+train;train-s1244;2;3;dem Wirt;dative-case
+train;train-s1249;4;4;mir;dative-case
+train;train-s12494;10;11;dem Staat;dative-case
+train;train-s12528;9;10;dem Ganzen;dative-case
+train;train-s12600;1;3;den digitalen Standard;other-case
+train;train-s12601;2;2;mir;other-case
+train;train-s12626;7;8;den Behörden;dative-case
+train;train-s1265;2;2;allen;dative-case
+train;train-s12674;14;16;der umfassenden Attacke;dative-case
+train;train-s12701;4;5;dieser Idee;dative-case
+train;train-s12782;12;12;ihm;no-case
+train;train-s12805;2;2;ihm;dative-case
+train;train-s1281;0;1;Dem Wunsch;other-case
+train;train-s12857;14;14;ihm;dative-case
+train;train-s12862;0;1;Seinem Verein;dative-case
+train;train-s12866;3;3;ihm;dative-case
+train;train-s12913;15;16;den Feinden;dative-case
+train;train-s12913;13;13;ihnen;no-case
+train;train-s12937;2;5;der Erforschung paranormaler Phänomene;dative-case
+train;train-s12956;9;9;denen;no-case
+train;train-s13008;0;1;Der Regierung;other-case
+train;train-s13028;2;2;ihm;no-case
+train;train-s13036;21;22;seiner Familie;other-case
+train;train-s13055;0;1;Seinen Eltern;other-case
+train;train-s132;2;2;mir;no-case
+train;train-s13203;17;17;ihm;no-case
+train;train-s13206;3;4;einem Ruf;no-case
+train;train-s1321;3;3;mir;dative-case
+train;train-s1321;31;31;mir;no-case
+train;train-s1322;2;3;dem Verein;dative-case
+train;train-s1322;9;9;keinem;dative-case
+train;train-s13223;9;11;Mitgliedern anderer Denominationen;dative-case
+train;train-s13225;11;11;ihm;no-case
+train;train-s13246;4;4;ihr;dative-case
+train;train-s13273;20;23;allen Besuchern des Parks;dative-case
+train;train-s13291;14;14;ihm;no-case
+train;train-s133;12;12;mir;dative-case
+train;train-s13352;24;24;diesem;no-case
+train;train-s1336;2;3;Ihrem Denken;other-case
+train;train-s13396;16;17;dem Museum;dative-case
+train;train-s1340;17;17;mir;no-case
+train;train-s13417;2;2;ihm;dative-case
+train;train-s13439;0;1;Dieser Gemeinde;other-case
+train;train-s13459;4;11;der rechten Hälfte des Wappens des Altkreises Uslar;dative-case
+train;train-s13502;8;10;der Heiligen Margarete;dative-case
+train;train-s1354;2;3;den Umständen;dative-case
+train;train-s1355;10;10;mir;no-case
+train;train-s13554;13;13;ihm;no-case
+train;train-s13615;19;19;denen;no-case
+train;train-s1371;13;13;mir;no-case
+train;train-s13727;5;9;dem Wappen der Familie Bioncourt;dative-case
+train;train-s13793;24;27;den Wünschen der Auftraggeber;other-case
+train;train-s13814;3;3;dem;no-case
+train;train-s13843;7;8;dem Stand;dative-case
+train;train-s13849;3;5;dem Kloster Traunkirchen;dative-case
+train;train-s13885;3;4;seinem Beispiel;other-case
+train;train-s13937;47;48;dem König;dative-case
+train;train-s13938;7;8;ihrem Eigner;dative-case
+train;train-s1394;7;7;mir;no-case
+train;train-s140;0;0;Allen;other-case
+train;train-s1409;7;7;mir;no-case
+train;train-s14101;3;4;dem Jungen;other-case
+train;train-s1428;0;0;Mir;dative-case
+train;train-s1431;17;17;mir;dative-case
+train;train-s1443;16;17;jeder Beschreibung;other-case
+train;train-s1445;0;0;Mir;other-case
+train;train-s146;12;12;einem;dative-case
+train;train-s1477;25;25;mir;no-case
+train;train-s1484;5;5;mir;no-case
+train;train-s1491;10;10;mir;dative-case
+train;train-s1515;3;4;der Bundesregierung;other-case
+train;train-s1519;9;10;den Eltern;other-case
+train;train-s1538;12;13;der SPD;other-case
+train;train-s1560;2;3;der Partei;other-case
+train;train-s1573;5;6;der Öffentlichkeit;dative-case
+train;train-s1574;2;3;den Leuten;dative-case
+train;train-s159;13;13;mir;no-case
+train;train-s1596;5;6;der Transaktion;other-case
+train;train-s1599;6;9;der Klage der Gewerkschaftsvertreter;other-case
+train;train-s16;34;34;ihm;dative-case
+train;train-s1607;15;16;jeder Regierung;other-case
+train;train-s1611;10;10;mir;dative-case
+train;train-s1614;5;7;der eigenen Praxis;other-case
+train;train-s1618;7;8;der PDS;other-case
+train;train-s1631;2;3;der SPD;other-case
+train;train-s1642;4;5;den Behörden;dative-case
+train;train-s1642;14;15;den Brüdern;dative-case
+train;train-s1663;11;12;der Rechtsbeugung;other-case
+train;train-s167;7;7;mir;no-case
+train;train-s1680;3;4;dem Thema;dative-case
+train;train-s1735;4;4;ihm;no-case
+train;train-s174;2;2;mir;dative-case
+train;train-s1745;2;2;mir;other-case
+train;train-s1755;9;10;der Armut;other-case
+train;train-s1803;2;2;mir;no-case
+train;train-s1835;7;8;dem Kaufinteressenten;other-case
+train;train-s1853;3;4;den Kunden;dative-case
+train;train-s1857;8;9;massiven Auflagen;dative-case
+train;train-s1860;16;20;dem Ansehen des Finanzplatzes Deutschland;dative-case
+train;train-s1865;22;22;uns;dative-case
+train;train-s1900;0;1;Der Vorstand;other-case
+train;train-s1910;4;5;dem Präsidenten;dative-case
+train;train-s1955;4;5;der Verantwortung;other-case
+train;train-s1958;8;8;wem;dative-case
+train;train-s1985;7;8;einem Richter;other-case
+train;train-s1991;0;3;Die Abgeordneten der Grünen;other-case
+train;train-s2034;4;5;der Stimme;other-case
+train;train-s2040;2;2;mir;no-case
+train;train-s2044;3;5;der ganzen Welt;dative-case
+train;train-s2058;12;15;den US -- Konzerne;other-case
+train;train-s2077;18;21;den Importen eines Monats;dative-case
+train;train-s210;3;3;Dir;no-case
+train;train-s2103;16;17;den Elefanten;other-case
+train;train-s2113;4;5;den Republikanern;other-case
+train;train-s2114;6;8;der Witwe Rabins;dative-case
+train;train-s2124;9;10;ihren Mitarbeitern;other-case
+train;train-s2169;5;9;der neuen SPD-Führung;other-case
+train;train-s2188;3;4;den Klagen;other-case
+train;train-s2190;5;5;mir;dative-case
+train;train-s22;0;1;Beiden Zahnärzten;dative-case
+train;train-s2210;0;1;Den Unterzeichnern;other-case
+train;train-s2234;2;2;ihnen;no-case
+train;train-s2308;5;8;dem Beispiel der Zentrale;other-case
+train;train-s2322;11;14;der Größe des Spielfeldes;other-case
+train;train-s2366;10;12;der seines Hauptprojektes;dative-case
+train;train-s237;6;6;mir;no-case
+train;train-s2387;3;9;den Empfehlungen des 1861 verabschiedeten Eisenacher Regulativs;dative-case
+train;train-s2413;0;2;Dem regionalen Luftverkehr;other-case
+train;train-s2474;12;13;einer Meinung;other-case
+train;train-s2475;3;3;ihr;no-case
+train;train-s2500;6;6;ihm;no-case
+train;train-s2519;3;3;ihm;dative-case
+train;train-s254;2;4;dem neuen Team;dative-case
+train;train-s2561;12;12;der;no-case
+train;train-s2581;19;19;der;other-case
+train;train-s2602;0;1;Der SPD;dative-case
+train;train-s2673;11;12;dem Leser;other-case
+train;train-s2695;3;4;dem Zweck;dative-case
+train;train-s2696;11;12;dem Familienleben;dative-case
+train;train-s270;16;17;dem Patienten;other-case
+train;train-s272;5;5;einem;other-case
+train;train-s2731;2;2;ihm;dative-case
+train;train-s275;2;3;jedem Arzt;other-case
+train;train-s2759;11;11;der;no-case
+train;train-s277;2;2;einem;other-case
+train;train-s2783;1;2;dem Verfall;dative-case
+train;train-s279;5;5;mir;dative-case
+train;train-s2803;9;9;Fahrzeugen;dative-case
+train;train-s2815;2;2;ihm;no-case
+train;train-s2823;2;3;der Kirche;dative-case
+train;train-s283;5;5;jedem;dative-case
+train;train-s2890;3;6;dem Beispiel seines Vaters;other-case
+train;train-s2913;15;15;ihm;dative-case
+train;train-s2996;3;3;ihm;dative-case
+train;train-s3033;7;7;der;other-case
+train;train-s312;3;3;jedem;dative-case
+train;train-s314;5;5;mir;dative-case
+train;train-s3140;6;7;dem Ende;dative-case
+train;train-s3178;2;2;ihr;dative-case
+train;train-s3189;5;5;ihm;no-case
+train;train-s3276;0;0;Dem;other-case
+train;train-s3278;14;15;der Menschheit;dative-case
+train;train-s3319;7;7;ihm;dative-case
+train;train-s3322;5;6;dem Spieler;other-case
+train;train-s3435;7;8;den Astronauten;dative-case
+train;train-s3447;0;0;Ihm;dative-case
+train;train-s3448;0;1;Diesen Vorschlägen;other-case
+train;train-s3452;9;12;der Armut der Gemeinden;dative-case
+train;train-s3471;2;5;den dort lebenden Indianern;other-case
+train;train-s3481;11;11;ihm;other-case
+train;train-s3484;5;5;Amtsträgern;other-case
+train;train-s3507;15;16;jenen Frauen;other-case
+train;train-s3531;5;5;ihm;dative-case
+train;train-s3591;15;16;dem Werk;other-case
+train;train-s3609;3;3;ihnen;dative-case
+train;train-s3614;12;13;dem Team;other-case
+train;train-s3627;6;7;dem Widerstand;dative-case
+train;train-s3650;8;8;ihr;no-case
+train;train-s3674;2;2;ihm;other-case
+train;train-s3675;5;5;ihr;dative-case
+train;train-s3741;9;10;der Öffentlichkeit;dative-case
+train;train-s3742;9;9;ihr;dative-case
+train;train-s3836;3;6;der Sozialistischen Partei Österreichs;dative-case
+train;train-s3893;7;7;ihm;no-case
+train;train-s3912;14;14;ihm;dative-case
+train;train-s3969;0;1;Der Durchsetzung;other-case
+train;train-s4052;0;1;Den Operationen;other-case
+train;train-s4079;3;3;ihm;no-case
+train;train-s4144;5;6;einer Gruppe;other-case
+train;train-s4172;7;7;ihnen;no-case
+train;train-s4214;6;6;ihm;dative-case
+train;train-s4254;3;3;ihm;no-case
+train;train-s4417;0;1;Indianischen Dieben;other-case
+train;train-s4441;8;8;ihm;no-case
+train;train-s4500;23;27;der zweiten Periode der Eisenzeit;other-case
+train;train-s4501;3;5;den Landesregierungen Jonas;dative-case
+train;train-s451;1;1;mir;no-case
+train;train-s4516;5;5;ihm;dative-case
+train;train-s454;1;1;mir;dative-case
+train;train-s4565;15;16;dem Präsidenten;other-case
+train;train-s4580;2;2;ihr;other-case
+train;train-s4581;7;8;einer Vielzahl;other-case
+train;train-s4669;0;0;Ihm;no-case
+train;train-s467;13;15;der ersten Beurteilung;dative-case
+train;train-s4704;0;0;Ihm;no-case
+train;train-s4716;9;9;ihm;no-case
+train;train-s472;4;4;mir;no-case
+train;train-s4740;3;6;der Entscheidung der Eltern;dative-case
+train;train-s4771;6;7;der Betreibergesellschaft;other-case
+train;train-s4788;5;5;Armen;dative-case
+train;train-s4798;13;15;jedem dieser Konten;dative-case
+train;train-s4804;3;3;wem;dative-case
+train;train-s484;0;0;Mir;dative-case
+train;train-s4867;0;0;Ihnen;no-case
+train;train-s4869;26;27;seiner Aufgabe;other-case
+train;train-s4907;10;10;ihm;dative-case
+train;train-s4966;10;10;der;no-case
+train;train-s5008;3;3;ihr;no-case
+train;train-s5016;5;5;ihm;no-case
+train;train-s5048;6;8;Schiffen aller Nationalitäten;other-case
+train;train-s5065;10;12;dem FC Schalke;dative-case
+train;train-s5170;3;3;ihr;dative-case
+train;train-s5192;12;15;Forschern auch anderer Fachbereiche;dative-case
+train;train-s524;5;6;Ihren Patienten;other-case
+train;train-s5251;11;11;ihm;no-case
+train;train-s5315;2;3;seinem Eigennamen;other-case
+train;train-s5323;23;23;ihm;no-case
+train;train-s5364;0;3;Den ersten drei Titeln;other-case
+train;train-s5379;18;18;dem;no-case
+train;train-s5401;2;2;diesem;other-case
+train;train-s5407;11;12;gesetzlichen Regelungen;dative-case
+train;train-s5423;8;10;einer großen Beliebtheit;dative-case
+train;train-s5467;15;16;der Arbeit;other-case
+train;train-s5471;14;14;ihm;other-case
+train;train-s5511;3;3;ihm;dative-case
+train;train-s5541;7;8;den beiden;other-case
+train;train-s5541;0;0;Diesem;no-case
+train;train-s5542;6;10;ihr und dem gemeinsamen Sohn;dative-case
+train;train-s5542;0;0;Diesem;other-case
+train;train-s5544;24;24;ihr;dative-case
+train;train-s555;14;14;mir;dative-case
+train;train-s5559;6;6;ihm;dative-case
+train;train-s561;6;6;mir;dative-case
+train;train-s5679;12;12;dem;other-case
+train;train-s5732;2;3;der Hinrichtung;dative-case
+train;train-s5751;2;3;der Stiftung;other-case
+train;train-s5771;10;11;privaten Vorhaben;dative-case
+train;train-s5781;11;14;der Zustimmung des Domkapitels;dative-case
+train;train-s5824;14;14;ihnen;other-case
+train;train-s5855;2;2;ihm;dative-case
+train;train-s5875;9;9;ihm;dative-case
+train;train-s5883;13;16;der Familie der Schelme;other-case
+train;train-s5967;2;3;dem Institut;other-case
+train;train-s5992;2;2;ihnen;no-case
+train;train-s5997;11;12;den Gebäuden;other-case
+train;train-s6006;12;13;ihren Mitgliedern;dative-case
+train;train-s6014;2;2;ihm;other-case
+train;train-s6027;5;11;"den ""50 Perlen des schmerzhaften Gebetsrosenkranzes";dative-case
+train;train-s6048;13;13;dem;no-case
+train;train-s6065;11;13;der Stadt Bayreuth;other-case
+train;train-s6088;0;0;Diesem;other-case
+train;train-s6158;2;2;ihm;dative-case
+train;train-s62;5;5;mir;dative-case
+train;train-s6226;3;4;einem Ruf;no-case
+train;train-s63;7;7;mir;dative-case
+train;train-s6301;10;10;ihnen;no-case
+train;train-s6421;0;0;Ihm;no-case
+train;train-s6426;11;11;ihnen;dative-case
+train;train-s6459;12;19;dem deutschen Auswärtigen Amt und dem Außenminister;dative-case
+train;train-s6466;0;0;Dem;no-case
+train;train-s6511;8;8;ihm;no-case
+train;train-s6517;10;11;dem Generalkapitän;dative-case
+train;train-s6550;0;0;Ihm;no-case
+train;train-s6632;8;11;der britischen Kommunistischen Partei;dative-case
+train;train-s6643;10;11;dem Adel;other-case
+train;train-s666;11;11;jedem;dative-case
+train;train-s667;5;9;einem 4 - Sterne Hotel;dative-case
+train;train-s6703;4;11;seinem politischen Vorbild Francisco Madero und dessen Revolutionstruppen;dative-case
+train;train-s6711;6;8;der Stadt Leonberg;other-case
+train;train-s6737;24;24;ihm;dative-case
+train;train-s6767;7;8;dem Protestantismus;dative-case
+train;train-s678;2;2;mir;no-case
+train;train-s6787;10;10;ihm;no-case
+train;train-s679;3;3;mir;dative-case
+train;train-s6793;6;7;der Steuerhinterziehung;other-case
+train;train-s6819;6;6;ihr;no-case
+train;train-s683;6;8;einer weiterführenden Beratung;dative-case
+train;train-s686;2;2;Ihnen;dative-case
+train;train-s6863;19;20;dem Vorhaben;dative-case
+train;train-s6873;2;4;der deutschen Nationalmannschaft;other-case
+train;train-s6878;15;19;einer der bestehenden politischen Richtungen;other-case
+train;train-s688;3;4;dem Polizisten;dative-case
+train;train-s689;3;3;mir;dative-case
+train;train-s6890;5;6;der Kunst;other-case
+train;train-s693;13;13;ihm;no-case
+train;train-s6982;7;7;ihm;dative-case
+train;train-s701;13;13;jedem;dative-case
+train;train-s704;18;18;mir;dative-case
+train;train-s7081;4;5;den Jungvögeln;other-case
+train;train-s7101;16;16;ihnen;no-case
+train;train-s7173;15;16;bescheidenen Verhältnissen;dative-case
+train;train-s7199;14;17;vielen dieser jüdischen Emigranten;other-case
+train;train-s7209;3;3;ihm;other-case
+train;train-s7257;0;11;Den Abmessungen der Schiffe (26,67 m lang, 3,11 m breit;other-case
+train;train-s7276;0;0;Dem;other-case
+train;train-s7276;20;20;Jugendlichen;other-case
+train;train-s7320;1;2;dem Rechnung;dative-case
+train;train-s7340;7;7;ihm;dative-case
+train;train-s735;3;4;seinem Image;dative-case
+train;train-s7385;33;34;der Mannschaft;other-case
+train;train-s7396;36;36;ihm;dative-case
+train;train-s7441;0;0;Ihm;no-case
+train;train-s7479;8;8;ihm;other-case
+train;train-s7518;5;5;ihm;no-case
+train;train-s7529;0;0;Ihr;no-case
+train;train-s7544;25;25;dem;no-case
+train;train-s7559;6;7;den Bewohnern;other-case
+train;train-s7594;11;11;jenen;no-case
+train;train-s7654;23;25;der natürlichen Zerstörung;dative-case
+train;train-s7659;12;13;dem Rat;dative-case
+train;train-s7683;4;10;demjenigen eines anderen Revolutionärs: Franz Jung;dative-case
+train;train-s7727;17;17;dem;no-case
+train;train-s774;4;5;den Mandanten;dative-case
+train;train-s7775;6;8;dem ganzen Land;other-case
+train;train-s782;6;6;Ihr;no-case
+train;train-s784;4;5;meiner Mutter;dative-case
+train;train-s785;24;25;dem Arzt;dative-case
+train;train-s7854;7;9;dem ersten Bischof;other-case
+train;train-s7952;16;16;ihm;dative-case
+train;train-s796;5;10;"dem gesamtem Team der ""Hauptstadtschwestern";dative-case
+train;train-s7963;2;5;dem Grundsatz der Wahrheit;dative-case
+train;train-s7969;16;19;solchen Schülern und Schülerinnen;dative-case
+train;train-s80;10;10;dem;dative-case
+train;train-s8036;5;6;seiner Frau;dative-case
+train;train-s8041;0;4;Den Meldungen der eigenen Funkpeilung;dative-case
+train;train-s8053;11;12;der Stadt;other-case
+train;train-s8071;12;12;der;other-case
+train;train-s808;21;21;einem;no-case
+train;train-s8099;4;4;ihm;no-case
+train;train-s813;4;4;ihnen;no-case
+train;train-s8139;2;3;ihrem Mann;dative-case
+train;train-s8352;9;9;ihm;no-case
+train;train-s8352;14;14;ihm;no-case
+train;train-s8364;19;20;dem Gegenangriff;dative-case
+train;train-s8372;2;3;dem Priester;dative-case
+train;train-s8389;13;16;der Klasse NG 10;other-case
+train;train-s84;7;7;einem;dative-case
+train;train-s8429;3;4;allen Mädchen;other-case
+train;train-s8431;0;0;Ihnen;other-case
+train;train-s844;2;2;jedem;dative-case
+train;train-s8440;28;28;ihm;other-case
+train;train-s8457;17;17;ihm;no-case
+train;train-s8481;2;2;ihm;no-case
+train;train-s8483;6;6;ihnen;no-case
+train;train-s8506;3;4;der Aufgabe;dative-case
+train;train-s8531;11;12;dem Protestantismus;dative-case
+train;train-s855;4;5;seinem Namen;other-case
+train;train-s8555;13;13;dem;other-case
+train;train-s8584;3;12;dem Volk der Iteso, einem der kleineren Völker Kenias;dative-case
+train;train-s8608;4;5;den Göttern;dative-case
+train;train-s861;0;0;Dem;dative-case
+train;train-s8617;15;16;dem Programm;dative-case
+train;train-s8622;3;3;ihr;dative-case
+train;train-s8726;6;6;ihm;no-case
+train;train-s873;6;6;einem;dative-case
+train;train-s8733;2;3;dem Kaiser;other-case
+train;train-s875;10;10;einem;no-case
+train;train-s8752;18;19;dieser Evakuierung;other-case
+train;train-s8788;9;11;dem katholischen Glauben;dative-case
+train;train-s8802;4;4;ihnen;no-case
+train;train-s8834;4;5;dem Alkohol;dative-case
+train;train-s8900;6;6;ihnen;no-case
+train;train-s8917;6;8;dem der Wühlmäuse;other-case
+train;train-s8929;14;14;dem;other-case
+train;train-s8953;3;4;der Veranstaltung;other-case
+train;train-s905;10;10;einem;no-case
+train;train-s9086;12;13;einem Bundesstaat;other-case
+train;train-s9103;4;7;der Unterstützung jener Menschen;other-case
+train;train-s9151;3;5;der österreichischen Politik;other-case
+train;train-s9164;0;0;Dem;dative-case
+train;train-s9232;12;13;der Schale;dative-case
+train;train-s9243;12;14;dem westlichen Publikum;dative-case
+train;train-s9324;7;7;ihr;no-case
+train;train-s9326;2;2;ihm;no-case
+train;train-s9350;12;14;denen der Muslime;dative-case
+train;train-s9356;6;7;dem Repräsentantenhaus;other-case
+train;train-s9358;2;2;ihr;no-case
+train;train-s9372;7;9;dem Forstamt Sternenfels;other-case
+train;train-s9381;14;14;dem;no-case
+train;train-s9386;15;16;der Botschaft;other-case
+train;train-s9556;7;8;anderen Schülern;other-case
+train;train-s9574;1;4;einer Vernichtung ihres Fluggeräts;other-case
+train;train-s9582;0;0;Diesem;other-case
+train;train-s9599;24;25;jeder Skulptur;other-case
+train;train-s9599;3;3;ihm;no-case
+train;train-s9600;7;9;dem ursprünglichen Geist;dative-case
+train;train-s9668;10;10;sich;no-case
+train;train-s9714;5;5;ihnen;no-case
+train;train-s9730;7;9;den amerikanischen Spielern;dative-case
+train;train-s9790;10;11;der Herausforderung;other-case
+train;train-s9868;2;3;den beiden;other-case
+train;train-s9887;19;19;ihnen;dative-case
+train;train-s9919;4;5;dem Land;dative-case
+train;train-s9956;11;13;einem britischen Offizier;other-case
+test;test-s139;13;13;mir;dative-case
+test;test-s159;6;6;mir;no-case
+test;test-s185;2;2;mir;no-case
+test;test-s197;2;2;ihnen;dative-case
+test;test-s2;9;9;mir;no-case
+test;test-s204;5;6;allen Lesern;dative-case
+test;test-s205;18;19;dem Ambiente;dative-case
+test;test-s208;26;26;mir;no-case
+test;test-s234;25;28;den Regeln der Zwischenmenschlichkeit;dative-case
+test;test-s347;0;1;Der Bahn;other-case
+test;test-s361;5;8;dem Ministerpräsidenten Oskar Lafontaine;other-case
+test;test-s370;4;7;der Empfehlung des Landesausschusses;other-case
+test;test-s423;10;12;den neuen Mindestanforderungen;dative-case
+test;test-s436;9;11;den russischen Archiven;other-case
+test;test-s454;17;22;der ``zentralen Rolle der Sicherheitskräfte;other-case
+test;test-s454;29;29;denen;other-case
+test;test-s458;3;4;ihren Kunden;dative-case
+test;test-s5;4;4;Ihnen;dative-case
+test;test-s508;11;13;Unternehmern und Regierung;dative-case
+test;test-s514;15;18;den Frauen und Männern;other-case
+test;test-s561;9;10;dem Land;other-case
+test;test-s561;2;3;dem Stahl;other-case
+test;test-s578;10;14;der türkisch -- zypriotischen Presse;dative-case
+test;test-s578;4;6;einer geheimen Landkarte;other-case
+test;test-s59;2;2;mir;no-case
+test;test-s597;18;20;dem aktuellen Problem;other-case
+test;test-s597;0;1;Den Politikern;other-case
+test;test-s607;2;3;der Partei;other-case
+test;test-s621;14;14;ihnen;other-case
+test;test-s623;1;3;Den Herren Rao;other-case
+test;test-s645;11;11;ihm;other-case
+test;test-s668;29;32;dem demokratischen politischen Wettbewerb;dative-case
+test;test-s694;5;11;der Aufforderung des neuen Präsidenten Burhanuddin Rabbani;dative-case
+test;test-s713;2;3;dem Volk;other-case
+test;test-s732;8;9;der Versammlung;dative-case
+test;test-s740;11;12;einer Unterzeichnung;other-case
+test;test-s774;3;3;dem;dative-case
+test;test-s815;16;17;der SPD;other-case
+test;test-s828;7;10;der Entscheidung des Gerichtes;dative-case
+test;test-s845;0;0;Mir;other-case
+test;test-s865;2;2;ihnen;other-case
+test;test-s925;5;6;der Nordsee;other-case
+test;test-s99;7;7;mir;dative-case
+dev;dev-s106;8;8;mir;no-case
+dev;dev-s132;14;15;unseren Vorstellungen;dative-case
+dev;dev-s158;2;2;mir;dative-case
+dev;dev-s160;18;19;dem Vogel;dative-case
+dev;dev-s182;15;16;den Kindern;other-case
+dev;dev-s209;2;2;mir;dative-case
+dev;dev-s210;3;3;mir;dative-case
+dev;dev-s23;2;2;mir;no-case
+dev;dev-s295;2;4;der ersten Bewertung;dative-case
+dev;dev-s321;5;5;einem;no-case
+dev;dev-s322;3;3;mir;dative-case
+dev;dev-s388;3;3;mir;no-case
+dev;dev-s399;17;17;mir;no-case
+dev;dev-s405;11;11;mir;no-case
+dev;dev-s447;11;11;mir;no-case
+dev;dev-s480;6;6;mir;no-case
+dev;dev-s494;3;3;mir;dative-case
+dev;dev-s55;0;0;Mit;dative-case
+dev;dev-s583;9;10;diesem Vorschlag;dative-case
+dev;dev-s602;3;4;den Behörden;other-case
+dev;dev-s617;16;16;ihnen;dative-case
+dev;dev-s739;1;2;Den Beschäftigten;other-case
+dev;dev-s773;4;5;der Ansicht;no-case
+dev;dev-s779;3;4;der Partei;other-case
+dev;dev-s79;12;13;meinem Hund;dative-case
+dev;dev-s87;18;18;mir;no-case
