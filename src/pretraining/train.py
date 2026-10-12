@@ -454,7 +454,7 @@ def parse_args():
         "--epochs_phase1",
         type=int,
         default=10,
-        help="Number of Phase-1 epochs (default: 10).",
+        help="Number of Phase-1 epochs (default: 5).",
     )
     parser.add_argument(
         "--epochs_phase2",
